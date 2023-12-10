@@ -1,0 +1,195 @@
+.box-12 {
+  border: 2px solid blue;
+  padding: 20px;
+  width: 900px;
+  max-width: 900px;
+  margin: 70px auto;
+  box-sizing: border-box;
+  margin-top: -15 px;
+}
+
+.name-product {
+  color: black;
+}
+
+.box-title {
+  display: flex;
+}
+.box-12-image {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+.button-add-12 {
+  margin-left: 10px;
+}
+.incrementing-box {
+  border: 2px solid #ddd; /* Set your desired border styles */
+  padding: 20px;
+  margin: 10px;
+  width: 35%;
+  margin-top: 40px;
+}
+
+.box-12-name {
+  color: #207de9;
+  font-family: Inconsolata;
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.box-12-title {
+  color: #207de9;
+  font-family: Inconsolata;
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.box-12-price {
+  color: #ffdf6e;
+  font-family: Inconsolata;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: -10px;
+}
+
+.box-12-product {
+  border-radius: 30px;
+  border: 3px solid #207dff;
+  background: #fff;
+  color: #207de9;
+  font-family: Inconsolata;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.box-12-cart {
+  border-radius: 40px;
+  border: 3px solid #207dff;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+  width: 80px;
+}
+.box-123 {
+  display: flex;
+}
+.box-12-cart img {
+  width: 40px;
+  height: 40px;
+  margin-left: 0px;
+}
+
+/* Additional styles for the container and inner divs */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-div {
+  margin-top: 20px;
+}
+/* Add these styles to your existing CSS file or create a new one */
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-input button {
+  background-color: #207def;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0;
+}
+
+.quantity-input input {
+  width: 40px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Style the "Add to Cart" button */
+button {
+  background-color: #207def;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* Add these styles to your existing CSS file or create a new one */
+
+/* Styles for the buttons */
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.button-container button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #207def;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Styles for the description content */
+.description-container {
+  margin-top: 20px;
+}
+
+.description-container p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Optional: Style for detailed description content */
+.description-container div {
+  margin-top: 10px;
+}
+
+.description-container div p {
+  font-size: 16px;
+  line-height: 1.5;
+  /* Add additional styles as needed */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .box-12 {
+    width: 90%;
+  }
+
+  .box-12-name,
+  .box-12-price,
+  .box-12-product {
+    font-size: 16px;
+  }
+}
