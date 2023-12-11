@@ -94,7 +94,7 @@ const Header = () => {
           </div>
         </ul>
       </div>
-      <h1 className="categories">CATEGORIES</h1>
+
       <div className="box-container">
         {categories &&
           categories.map((category, index) => (

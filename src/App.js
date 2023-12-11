@@ -14,8 +14,11 @@ import Error from "./Components/Error";
 import Statistics from "./Components/Statistics";
 import AdminDash from "./Components/AdminDash";
 import AllSellers from "./Components/AllSellers";
+import CategoriesHome from "./Components/CategoriesHome";
+import HeroSection from    "./Components/HeroSection";
 function App() {
   return (
+    
     <Router>
 
       <Routes>
@@ -31,8 +34,7 @@ function App() {
       <Route path="/AllSellers" element={< AllSellers/>} />
 
 
-      
-
+ 
       
         
         <Route path="/login" element={<Login />} />

@@ -2,11 +2,16 @@
   import "../styles/Home.css"
   import {Helmet} from 'react-helmet'
   import Header from './Header';
-
+  import HeroSection from "./HeroSection";
+  import "../styles/Hero.css"
+import CategoriesHome from './CategoriesHome';
+import "../styles/categories.css"
   const Home = () => {
     return (
       <div>
         <Header/>
+        <HeroSection/>
+        <CategoriesHome/>
             <Helmet>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
