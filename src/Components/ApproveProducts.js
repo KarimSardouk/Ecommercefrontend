@@ -1,8 +1,8 @@
 import React from 'react'
-import "./ApproveProducts.css";
-import "./Dashboard.css"
+import "../styles/ApproveProducts.css";
+import "../styles/Dashboard.css"
 import { useNavigate } from "react-router-dom";
-import dellimage from "../Images/dell-inspiron.png"; 
+import dellimage from "../images/dell-inspiron.png"; 
 const ApproveProducts = () => {
 
   const navigate = useNavigate();

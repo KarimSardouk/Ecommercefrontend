@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 const Dashboard = () => {
   const [product, setProduct] = useState([]);
   const [price, setPrice] = useState([]);

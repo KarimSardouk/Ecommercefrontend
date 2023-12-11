@@ -1,7 +1,8 @@
   import React from 'react'
-  import "./Home.css"
+  import "../styles/Home.css"
   import {Helmet} from 'react-helmet'
   import Header from './Header';
+
   const Home = () => {
     return (
       <div>

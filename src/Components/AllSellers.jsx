@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AllSellers.css";
-import "./Dashboard.css";
+import "../styles/AllSellers.css";
+import "../styles/Dashboard.css";
 import axios from "axios";
 const AllSellers = () => {
   const [sellers, setSellers] = useState([]);

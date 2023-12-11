@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
-import "./AdminDash.css";
-import "./Dashboard.css"
+import "../styles/AdminDash.css";
+import "../styles/Dashboard.css"
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 // import dellimage from "../images/dell-inspiron.png";

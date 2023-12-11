@@ -1,6 +1,6 @@
 import React from "react";
-import "./Statistics.css";
-import "./Dashboard.css";
+import "../styles/Statistics.css";
+import "../styles/Dashboard.css";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 
