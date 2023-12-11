@@ -60,7 +60,6 @@ function CategoriesHome() {
     return (
         <div>
             <section className="section-white">
-            <div className="yellow-background"></div>
 
                 <div className="carousel">
                     <Slider {...settings}>

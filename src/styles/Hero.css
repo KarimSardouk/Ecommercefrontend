@@ -60,23 +60,26 @@ color: rgb(32,125,233) ;
     position: relative; /* Add position relative to the parent */
 
 }
+.yellows{
+    background-color:  rgb(255,223,110);
+    width: 575px;
+    height: 70%;
+    z-index: 1;
+    position: absolute;
+    margin:30% 30% 90% 55% ;
+    border-radius: 80px 0 0 80px;
+
+}
 .hdiv2{
     width:90%;
     height: 80%;
     flex: 1;
+    z-index: 2;
 }
-.yellow-background {
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    /* width: 100%;
-    height: 50%; Adjust the height as needed */
-    background-color: rgb(255, 223, 110);
-    z-index: -1; /* Send it to the back */
-  }
+
 
 @media (max-width: 500px) {
-    .hero2 {
+    .hero2 ,.yellows{
         display: none; /* Hide the second div under 500px */
     }
 

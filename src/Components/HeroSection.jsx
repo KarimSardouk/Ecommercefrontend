@@ -17,7 +17,10 @@ const HeroSection = () => {
                 <img src={image3} alt="laptop" className='hdiv2' />
 
             </div>
+            <div className='yellows'></div>
+
             </div>
+            
 
         
 
