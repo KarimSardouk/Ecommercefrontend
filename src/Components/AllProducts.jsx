@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/allproducts.css";
+import "../styles/AllProducts.css";
 import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
 import dellimage from "../images/dell-inspiron.png";

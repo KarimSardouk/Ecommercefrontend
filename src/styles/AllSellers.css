@@ -1,0 +1,76 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  width: 300px;
+  margin-left: 300px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #207de9;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.add-seller {
+  margin-top: 10px;
+  margin-left: 300px;
+  border: none;
+  background-color: #ffdf6e;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  border-radius: 20px;
+  color: #207de9;
+}
+
+.coolinput {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: static;
+  max-width: 240px;
+  margin-left: 300px;
+}
+
+.coolinput label.text {
+  font-size: 0.75rem;
+  color: #207de9;
+  font-weight: 700;
+  position: relative;
+  top: 0.5rem;
+  margin: 0 0 0 7px;
+  padding: 0 3px;
+  background: #e8e8e8;
+  width: fit-content;
+}
+
+.coolinput .input {
+  padding: 20px 50px;
+  font-size: 1.25rem;
+  border: 2px #207de9 solid;
+  border-radius: 5px;
+  /* background: #e8e8e8; */
+}
+
+.coolinput .input:focus {
+  outline: none;
+}
+.table1-description1 {
+  border: 1px solid blue;
+  width: 1000px;
+  height: 100px;
+  margin: auto;
+  overflow-wrap: break-word;
+}
+.table1-header1 {
+  border: 1px solid blue;
+  width: 1000px;
+  height: 20px;
+  margin: auto;
+  overflow-wrap: break-word;
+}
+.sellers-table {
+  margin: auto;
+  overflow-wrap: break-word;
+  margin-left: 200px;
+}

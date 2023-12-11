@@ -1,0 +1,98 @@
+ .sidebar {
+    margin:auto;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    background-color: #207DE9;
+  }
+.sidebar .home{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none; 
+}
+.sidebar .view-products{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  .sidebar  .stats{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  .sidebar .approval{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  .sidebar .sellers{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  } 
+ #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 65%;
+    margin:auto;
+
+  } 
+.customers .td1,.customers .td2,.customers .td3,.customers .td4,.customers .td5,.customers .td6,.customers .td7,.customers .td8,.customers .td9,.customers .td10,.customers .td11,.customers .td12,.customers .td13,.customers .td14,.customers .td15,.customers .td16,.customers .td17,.customers .td18,.customers .td19,.customers .td20,.customers .td21,.customers .td22,.customers .td23,.customers .td24,.customers .td25,.customers .td26,.customers .td27,.customers .td28,.customers .td29,.customers .td30,.customers .td31,.customers .td32,.customers .td33,.customers .td-fourth, #customers th {
+    border: 1px solid #207DE9;
+    padding: 8px;
+    justify-items: flex-end; /* Align content within cells along the inline (row) axis */
+    align-items: flex-end; /* Align content within cells along the block (column) axis */
+  }
+.home{ 
+    background-color: #FFDF6E;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+  .sellers{ 
+    background-color: #FFDF6E;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  .view-products{
+    background-color: #FFDF6E;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  .stats{
+    background-color: #FFDF6E;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+
+  }
+  .approval{
+    background-color: #FFDF6E;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+  }

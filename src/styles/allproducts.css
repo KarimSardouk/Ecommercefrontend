@@ -1,160 +1,160 @@
 .header {
-  width: 100%;
-  height: 70px;
-  background-color: #207def;
-}
-
-#myInput {
-  background-image: none;
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  background-size: 30px 30px; /* Set the desired size of the background image */
-  width: 30%;
-  font-size: 30px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-  margin-left: 33%;
-}
-
-#myInput:hover {
-  background-image: url("../images/icons8-search.gif");
-}
-
-.header-ul {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 400px;
-  display: flex;
-  justify-content: space-between; /* Distribute items evenly */
-  width: 952px;
-  color: #fff;
-  font-family: Inder;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.header-ul li {
-  margin-right: 10px; /* Adjust the right margin to create space between items */
-  margin-top: 18px;
-}
-.images12 img {
-  width: 60px;
-  height: 60px;
-  background-color: #207def;
-  margin-right: 50px;
-}
-.header-ul a {
-  text-decoration: none;
-  color: #fff;
-  font-family: Inder;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-.image-profile {
-  margin-top: 5px;
-}
-.box-1 {
-  border: 2px solid blue; /* Set the border to 2 pixels solid blue */
-  padding: 10px;
-  width: 404px;
-  height: 523px;
-  margin-top: 70px;
-}
-
-.box-1-image {
-  width: 300px;
-  height: 220px;
-  margin-top: 30px;
-  margin-left: 40px;
-  transition: transform 0.3s ease-in-out;
-}
-.box-1:hover .box-1-image {
-  transform: scale(1.1); /* Enlarge the image on hover */
-}
-.box-1-image:hover {
-  cursor: pointer;
-}
-
-.box-1-name {
-  color: #207de9;
-  font-family: Inconsolata;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.box-1-price {
-  color: #ffdf6e;
-  font-family: Inconsolata;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-top: -20px;
-}
-
-.box-1-product {
-  border: 3px solid #207dff;
-  background: #fff;
-  color: #207de9;
-  font-family: Inconsolata;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 701;
-  line-height: normal;
-  width: 200px;
-  height: 50px;
-  margin-top: 10px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 10px;
-  padding-bottom: 20px;
-  text-decoration: none;
-  transition: background-color 0.5s ease;
-}
-.box-1-product:hover {
-  background-color: #3498db; /* Change to your preferred hover background color */
-  color: #fff; /* Change text color on hover */
-}
-.box-1-cart {
-  border-radius: 40px;
-  border: 3px solid #207dff;
-  background: #fff;
-  justify-content: center;
-  justify-items: center;
-  margin-left: 40px;
-  padding: 10px;
-  width: 80px;
-  transition: background-color 0.5s ease;
-  margin-top: 5px;
-}
-.box-1-cart:hover {
-  background-color: lightblue; /* Change to your preferred hover background color */
-  color: #fff; /* Change text color on hover */
-  cursor: pointer;
-}
-.box-1-cart img {
-  width: 60px;
-  height: 60px;
-  margin-left: 5px;
-}
-.boxing123 {
-  display: flex;
-  width: 370px;
-}
-.box-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-left: 60px;
-  margin-right: 60px;
-}
+    width: 100%;
+    height: 70px;
+    background-color: #207def;
+  }
+  
+  #myInput {
+    background-image: none;
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px; /* Set the desired size of the background image */
+    width: 30%;
+    font-size: 30px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-left: 33%;
+  }
+  
+  #myInput:hover {
+    background-image: url("../images/icons8-search.gif");
+  }
+  
+  .header-ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 400px;
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    width: 952px;
+    color: #fff;
+    font-family: Inder;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .header-ul li {
+    margin-right: 10px; /* Adjust the right margin to create space between items */
+    margin-top: 18px;
+  }
+  .images12 img {
+    width: 60px;
+    height: 60px;
+    background-color: #207def;
+    margin-right: 50px;
+  }
+  .header-ul a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Inder;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .image-profile {
+    margin-top: 5px;
+  }
+  .box-1 {
+    border: 2px solid blue; /* Set the border to 2 pixels solid blue */
+    padding: 10px;
+    width: 404px;
+    height: 523px;
+    margin-top: 70px;
+  }
+  
+  .box-1-image {
+    width: 300px;
+    height: 220px;
+    margin-top: 30px;
+    margin-left: 40px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .box-1:hover .box-1-image {
+    transform: scale(1.1); /* Enlarge the image on hover */
+  }
+  .box-1-image:hover {
+    cursor: pointer;
+  }
+  
+  .box-1-name {
+    color: #207de9;
+    font-family: Inconsolata;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .box-1-price {
+    color: #ffdf6e;
+    font-family: Inconsolata;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: -20px;
+  }
+  
+  .box-1-product {
+    border: 3px solid #207dff;
+    background: #fff;
+    color: #207de9;
+    font-family: Inconsolata;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 701;
+    line-height: normal;
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+  }
+  .box-1-product:hover {
+    background-color: #3498db; /* Change to your preferred hover background color */
+    color: #fff; /* Change text color on hover */
+  }
+  .box-1-cart {
+    border-radius: 40px;
+    border: 3px solid #207dff;
+    background: #fff;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 40px;
+    padding: 10px;
+    width: 80px;
+    transition: background-color 0.5s ease;
+    margin-top: 5px;
+  }
+  .box-1-cart:hover {
+    background-color: lightblue; /* Change to your preferred hover background color */
+    color: #fff; /* Change text color on hover */
+    cursor: pointer;
+  }
+  .box-1-cart img {
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+  }
+  .boxing123 {
+    display: flex;
+    width: 370px;
+  }
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }

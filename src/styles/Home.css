@@ -1,0 +1,93 @@
+.square1{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+}
+.square2{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square3{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square4{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square5{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square6{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square7{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square8{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square9{
+    border: 1px solid #207DE9;
+    width: 20vh;
+    height: 10vw;
+    margin:5px;
+
+}
+.square123{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.square456{
+    display: flex;
+    justify-content: space-evenly;
+
+
+
+}
+.square789{
+    display: flex;
+    justify-content: space-evenly;
+
+
+
+}
+.image1,.image2,.image3,.image4,.image5,.image6,.image7,.image8,.image9{
+    width:  120px;
+    height: 120px;
+}
+.categories{
+    text-align: center;
+    color: #207DE9;
+    font-weight: 300;
+    font-family: 'Inconsolata', monospace;
+}
+.tags{text-align: center;
+margin: auto;}
