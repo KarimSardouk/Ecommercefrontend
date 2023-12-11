@@ -1,0 +1,60 @@
+#sales-people {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 55%;
+  margin: auto;
+}
+.sales-people .td1,
+.sales-people .td2,
+.sales-people .td3,
+.sales-people .t-d-4,
+.sales-people .t-d-5,
+.sales-people .t-d-6,
+.sales-people .t-d-7,
+.sales-people .t-d-8,
+.sales-people .t-d-9,
+.sales-people .t-d-fourth,
+#sales-people {
+  border: 1px solid #207de9;
+  padding: 8px;
+  margin-left: 220px;
+  justify-items: flex-end; /* Align content within cells along the inline (row) axis */
+  align-items: flex-end; /* Align content within cells along the block (column) axis */
+}
+.home {
+  background-color: #ffdf6e;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+.sellers {
+  background-color: #ffdf6e;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.t-h-1 {
+  border: 1px solid #207de9;
+}
+.t-h-2 {
+  border: 1px solid #207de9;
+}
+.t-h-3 {
+  border: 1px solid #207de9;
+}
+.t-h-4 {
+  border: 1px solid #207de9;
+}
+.t-h-5 {
+  border: 1px solid #207de9;
+}
+.t-h-6 {
+  border: 1px solid #207de9;
+}
+.t-h-7 {
+  border: 1px solid #207de9;
+}

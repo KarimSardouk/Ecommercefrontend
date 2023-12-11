@@ -1,0 +1,37 @@
+.stats-header {
+  color: #207dff;
+  font-family: Inconsolata;
+  font-size: 50px;
+  text-align: center;
+}
+
+.most-sold{
+    width:  350px;
+    height: 350px;
+    background-color: #FFDF6E;
+    border-radius: 10px;
+
+}
+.revenue{
+    width:  350px;
+    height: 350px;
+    background-color: #FFDF6E;
+    border-radius: 10px;
+}
+.stats-information1,
+.stats-information2,
+.stats-information3,
+.stats-information4,
+.stats-information5{
+    text-align: center; 
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+
+}
+.sales-rev{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}

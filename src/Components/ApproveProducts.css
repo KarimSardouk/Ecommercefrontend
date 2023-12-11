@@ -1,0 +1,40 @@
+.informations{
+    display: flex;
+padding: 30px 20px 30px 30px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+.button-first,.button-second{
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: #207dff;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+.body1 {
+    background: #f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Inconsolata", sans-serif;
+    height: 110vh;
+
+}
+.product{
+    width: 150px;
+}
+.border{
+    border: 5px solid #207dff;
+    width: 50dvh;
+    height: 20dvw;
+}
+
+
