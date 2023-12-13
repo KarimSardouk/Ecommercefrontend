@@ -1,21 +1,24 @@
-  import React from 'react'
-  import "../styles/Home.css"
-  import {Helmet} from 'react-helmet'
-  import Header from './Header';
+import React from "react";
+import "../styles/Home.css";
+import { Helmet } from "react-helmet";
+import Header from "./Header";
 
-  const Home = () => {
-    return (
-      <div>
-        <Header/>
-            <Helmet>
+const Home = () => {
+  return (
+    <div>
+      <Helmet>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;700&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Teko:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
-        {/* <h1 className='categories'>CATEGORIES</h1>
+      {/* <h1 className='categories'>CATEGORIES</h1>
         <div className="square123">
         <div className="square1"><img src="Rectangle 57.png" alt="" className='image1' /><p className='tags'>Laptops &gt </p></div>
         <div className="square2"><img src="Rectangle 57.png" alt="" className='image2' /><p className='tags'>Laptops &gt </p></div>
@@ -31,8 +34,8 @@
         <div className="square8"><img src="Rectangle 57.png" alt="" className='image8'/><p className='tags'>Laptops &gt</p></div>
         <div className="square9"><img src="Rectangle 57.png" alt="" className='image9'/><p className='tags'>Laptops &gt</p></div>
         </div> */}
-      </div>
-    )
-  }
+    </div>
+  );
+};
 
-  export default Home
+export default Home;
