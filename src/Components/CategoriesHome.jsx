@@ -72,7 +72,7 @@ function CategoriesHome() {
                                     alt="pic"
                                 />
                                 <div className="desc">
-                                   <div className="ctn"> <h3 >Category Name</h3></div>
+                                   <div className="ctn"> <h3 className="h3">Category Name</h3></div>
                                 
                                 <div className="arr">
                                     <img src={image1} className="arrow" />
