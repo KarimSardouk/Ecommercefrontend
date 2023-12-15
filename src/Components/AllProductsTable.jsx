@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/AllProducts.css";
+import "../styles/allproducts.css";
 import "../styles/AllProductsTable.css";
-import cartimage from "../images/cartimage.png";
-import profileimage from "../images/profileimage.png";
-import dellimage from "../images/dell-inspiron.png";
-import cart123 from "../images/cart123.png";
-import logoutimg from "../images/shutdown.png";
+import cartimage from "../Images/cartimage.png";
+import profileimage from "../Images/profileimage.png";
+import dellimage from "../Images/dell-inspiron.png";
+import cart123 from "../Images/cart123.png";
+import logoutimg from "../Images/shutdown.png";
 import Header from "./header";
 
 const AllProductsTable = () => {
@@ -116,7 +116,6 @@ const AllProductsTable = () => {
   return (
     <div>
       <div className="sidebar">
-
         <a className="home" onClick={handleHome}>
           Home
         </a>

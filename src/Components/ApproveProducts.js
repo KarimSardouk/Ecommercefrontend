@@ -5,7 +5,7 @@ import "../styles/ApproveProducts.css";
 import "../styles/Dashboard.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logoutimg from "../images/shutdown.png";
+import logoutimg from "../Images/shutdown.png";
 
 const ApproveProducts = () => {
   const [selectedImage, setSelectedImage] = useState(null);

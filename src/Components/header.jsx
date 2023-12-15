@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import cartimage from "../images/cartimage.png";
-import profileimage from "../images/profileimage.png";
+import cartimage from "../Images/cartimage.png";
+import profileimage from "../Images/profileimage.png";
 import "../styles/header.css";
 import { Helmet } from "react-helmet";
 const Header = () => {
@@ -16,7 +16,17 @@ const Header = () => {
   }, []);
   const handleNavigate = (e) => {
     e.preventDefault();
-    navigate("/About");
+    const aboutSection = document.getElementById("About"); // Use the correct ID
+
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("#About");
+    }
+  };
+  const handleContact = (e) => {
+    e.preventDefault();
+    navigate("/Contact1");
   };
   const handleCart = (e) => {
     e.preventDefault();
@@ -29,7 +39,7 @@ const Header = () => {
   const handleAllProducts = (e) => {
     e.preventDefault();
     navigate("/AllProducts");
-  }
+  };
   const getAllCategories = async () => {
     try {
       const response = await axios.get("http://localhost:8000/categories/");
@@ -48,7 +58,7 @@ const Header = () => {
   const handleAdminDash = (e) => {
     e.preventDefault();
     navigate("/AdminDash");
-  }
+  };
   return (
     <div>
       <Helmet>
@@ -65,14 +75,19 @@ const Header = () => {
       </Helmet>
       <div className="header">
         <ul className="header-ul">
-          <img src="icons8-dashboard-90.png" alt='this is an image' className="adm-dash" onClick={handleAdminDash} />
+          <img
+            src="icons8-dashboard-90.png"
+            alt="this is an image"
+            className="adm-dash"
+            onClick={handleAdminDash}
+          />
           <a href="/" className="a">
             <li>Home</li>
           </a>
           <a href="#" className="a" onClick={handleNavigate}>
             <li>About</li>
           </a>
-          <a href="/contact" className="a">
+          <a href="/contact" className="a" onClick={handleContact}>
             <li>Contact</li>
           </a>
           <a href="/category" className="a">
@@ -90,11 +105,15 @@ const Header = () => {
               <img className="image-profile" src={profileimage} alt="" />
             </a>
 
-            <img src='icons8-dashboard-100.png' alt='img' className="dashboard-img" onClick={handleDashboard} />
+            <img
+              src="icons8-dashboard-100.png"
+              alt="img"
+              className="dashboard-img"
+              onClick={handleDashboard}
+            />
           </div>
         </ul>
       </div>
-
     </div>
   );
 };

@@ -4,7 +4,7 @@ import Video from "../Videos/video2.mp4";
 
 const About = () => {
   return (
-    <div className="about">
+    <div className="about" id="about">
       <div className="about_content">
         <h1 className="aTitle">About Us</h1>
         <p className="aboutParagraph">

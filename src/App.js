@@ -21,6 +21,7 @@ import AddProduct from "./Components/AddProduct";
 import Brands from "./Components/Brands";
 import Statistics1 from "./Components/Statistics1";
 import Footer from "./Components/Footer";
+import Contact1 from "./Components/ContactUsPage";
 
 function App() {
   return (
@@ -28,12 +29,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-
           <Route
             path="/"
             element={
               <>
-
                 <Home />
                 <About />
                 <Brands />
@@ -58,11 +57,11 @@ function App() {
             element={
               <>
                 <AllProducts />
-
               </>
             }
           />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/Contact1" element={<Contact1 />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/ApproveProducts" element={<ApproveProducts />} />
           <Route path="/Statistics" element={<Statistics />} />
@@ -70,10 +69,7 @@ function App() {
           <Route path="/AllSellers" element={<AllSellers />} />
           <Route path="/AllProductsTable" element={<AllProductsTable />} />
           <Route path="/products/:productId" element={<ProductView />} />
-          <Route
-            path="/ApproveProducts/:productId"
-            element={<ProductView />}
-          />
+          <Route path="/ApproveProducts/:productId" element={<ProductView />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/ApproveProducts" element={<ApproveProducts />} />
           <Route path="/AddProduct" element={<AddProduct />} />
