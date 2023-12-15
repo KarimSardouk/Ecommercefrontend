@@ -5,6 +5,7 @@ import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
 import "../App.css";
 import { Helmet } from "react-helmet";
+import AdminDash from "./AdminDash";
 const Header = () => {
   const[categories,setCategories] = useState([]);
   const [image, setImage] = useState([]);
@@ -40,10 +41,10 @@ const Header = () => {
    e.preventDefault(); 
    navigate("/Category");
   }
-  // const handleAdminDash = (e) => {
-  //   e.preventDefault();
-  //   navigate("/AdminDash");
-  // };
+  const handleAdminDash = (e) => {
+    e.preventDefault();
+    navigate("/AdminDash");
+  };
   // const handleCombinedClicks = () => {
   //handleAdminDash();
   //checkIsUserAdmin();
@@ -116,6 +117,7 @@ const Header = () => {
             src="icons8-dashboard-90.png"
             alt="this is an image"
             className="adm-dash"
+            onClick={handleAdminDash}
           />
           <a href="/" className="a">
             <li>Home</li>
