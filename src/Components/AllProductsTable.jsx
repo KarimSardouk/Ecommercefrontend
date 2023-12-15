@@ -3,12 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/allproducts.css";
 import "../styles/AllProductsTable.css";
-import cartimage from "../Images/cartimage.png";
-import profileimage from "../Images/profileimage.png";
-import dellimage from "../Images/dell-inspiron.png";
-import cart123 from "../Images/cart123.png";
-import logoutimg from "../Images/shutdown.png";
-import Header from "./header";
+import cartimage from "../images/cartimage.png";
+import profileimage from "../images/profileimage.png";
+import dellimage from "../images/dell-inspiron.png";
+import cart123 from "../images/cart123.png";
+import logoutimg from "../images/shutdown.png";
+import Header from "./Header";
 
 const AllProductsTable = () => {
   const [products, setProducts] = useState([]);

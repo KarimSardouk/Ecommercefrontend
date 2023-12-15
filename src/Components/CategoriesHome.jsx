@@ -1,9 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-import images from "../Images/laptop.png";
+import images from "../images/laptop.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../Images/right-arrow.png";
+import image1 from "../images/right-arrow.png";
 
 function CategoriesHome() {
   var settings = {

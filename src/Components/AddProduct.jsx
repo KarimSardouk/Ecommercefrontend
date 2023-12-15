@@ -4,8 +4,8 @@ import "../styles/AddProduct.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logoutimg from "../Images/cart123.png";
-import Header from "./header";
+import logoutimg from "../images/cart123.png";
+import Header from "./Header";
 
 const AddProduct = () => {
   const [selectedImage, setSelectedImage] = useState(null);

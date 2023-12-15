@@ -18,7 +18,7 @@
 }
 
 #myInput:hover {
-  background-image: url("../Images/icons8-search.gif");
+  background-image: url("../images/icons8-search.gif");
 }
 
 .header-ul {
@@ -62,7 +62,7 @@
   border: 2px solid blue; /* Set the border to 2 pixels solid blue */
   padding: 10px;
   width: 404px;
-  height: 523px;
+  height: 350px;
   margin-top: 70px;
 }
 
@@ -83,7 +83,7 @@
 .box-1-name {
   color: #207de9;
   font-family: Inconsolata;
-  font-size: 22px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

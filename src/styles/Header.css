@@ -30,9 +30,8 @@
     line-height: normal;
 }
 
-.header-ul li {
+ .header-ul li {
     margin-right: 10px;
-    /* Adjust the right margin to create space between items */
     margin-top: 18px;
 }
 
@@ -59,7 +58,6 @@
 
 .box-1 {
     border: 2px solid blue;
-    /* Set the border to 2 pixels solid blue */
     padding: 10px;
     width: 404px;
     height: 350px;
@@ -84,50 +82,6 @@
     line-height: normal;
     text-align: center;
 }
-
-/* .box-1-price {
-  color: #ffdf6e;
-  font-family: Inconsolata;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-top: -20px;
-} */
-
-/* .box-1-product {
-  border-radius: 30px;
-  border: 3px solid #207dff;
-  background: #fff;
-  color: #207de9;
-  font-family: Inconsolata;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 701;
-  line-height: normal;
-  padding: 14px;
-  padding-top: 10px;
-  width: 200px;
-  margin-left: 20px;
-} */
-/* .box-1-cart {
-  border-radius: 40px;
-  border: 3px solid #207dff;
-  background: #fff;
-  justify-content: center;
-  justify-items: center;
-  margin-left: 40px;
-  padding: 10px;
-  width: 80px;
-} */
-/* .box-1-cart img {
-  width: 60px;
-  height: 60px;
-  margin-left: 10px;
-} */
-/* .boxing123 {
-  display: flex;
-} */
 .box-container {
     display: flex;
     justify-content: space-evenly;
@@ -159,3 +113,81 @@
 .adm-dash:hover {
     cursor: pointer;
 }
+/* Extra Small Devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /* Your styles for extra small devices go here */
+    .toggle {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        background-color: rgb(1, 103, 255);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+      }
+      
+      .toggle span {
+        position: absolute;
+        height: 2px;
+        width: 40px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      
+      .toggle span:nth-child(1) {
+        transform: translateY(-15px);
+        width: 40px;
+        left: 15px;
+      }
+      
+      .toggle.toggle:hover span:nth-child(1) {
+        width: 40px;
+        transform: translateY(0px) rotate(45deg);
+        transition-delay: 0.125s;
+      }
+      
+      .toggle span:nth-child(2) {
+        transform: translateY(15px);
+        width: 40px;
+        left: 15px;
+      }
+      
+      .toggle.toggle:hover span:nth-child(2) {
+        width: 40px;
+        transform: translateY(0px) rotate(315deg);
+        transition-delay: 0.125s;
+      }
+      
+      .toggle:hover span:nth-child(3) {
+        transform: translateX(60px);
+      }
+      
+  }
+  
+  /* Small Devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    /* Your styles for small devices go here */
+  }
+  
+  /* Medium Devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 769px) and (max-width: 992px) {
+    /* Your styles for medium devices go here */
+  }
+  
+  /* Large Devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 993px) and (max-width: 1200px) {
+    /* Your styles for large devices go here */
+  }
+  
+  /* Extra Large Devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1201px) {
+    /* Your styles for extra large devices go here */
+  }
+  
+

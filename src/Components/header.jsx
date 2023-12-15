@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import cartimage from "../Images/cartimage.png";
-import profileimage from "../Images/profileimage.png";
-import "../styles/header.css";
+import cartimage from    "../images/cartimage.png";
+import profileimage from "../images/profileimage.png";
+import "../styles/Header.css";
 import { Helmet } from "react-helmet";
 const Header = () => {
   const [categories, setCategories] = useState([]);

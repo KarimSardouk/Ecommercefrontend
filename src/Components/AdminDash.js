@@ -3,8 +3,8 @@ import "../styles/AdminDash.css";
 import "../styles/Dashboard.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import logoutimg from "../Images/shutdown.png";
-import Header from "./header";
+import logoutimg from "../images/shutdown.png";
+import Header from "./Header";
 // import dellimage from "../images/dell-inspiron.png";
 const AdminDash = () => {
   const [users, setUsers] = useState([]);

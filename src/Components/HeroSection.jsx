@@ -1,6 +1,6 @@
 import React from "react";
-import image2 from "../Images/mmmm-transformed.jpeg";
-import image3 from "../Images/laptop.png";
+import image2 from "../images/mmmm-transformed.jpeg";
+import image3 from "../images/laptop.png";
 
 const HeroSection = () => {
   return (
