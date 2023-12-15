@@ -8,6 +8,7 @@ import profileimage from "../images/profileimage.png";
 import dellimage from "../images/dell-inspiron.png";
 import cart123 from "../images/cart123.png";
 import logoutimg from "../images/shutdown.png";
+import Header from "./header";
 
 const AllProductsTable = () => {
   const [products, setProducts] = useState([]);
@@ -115,6 +116,7 @@ const AllProductsTable = () => {
   return (
     <div>
       <div className="sidebar">
+
         <a className="home" onClick={handleHome}>
           Home
         </a>

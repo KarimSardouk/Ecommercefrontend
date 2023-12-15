@@ -6,6 +6,7 @@ import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
 import dellimage from "../images/dell-inspiron.png";
 import cart123 from "../images/cart123.png";
+import Header from "./header";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -46,6 +47,7 @@ const AllProducts = () => {
   }
 
   return (
+
     <div>
       <h1>All Products</h1>
       <div>
@@ -70,30 +72,30 @@ const AllProducts = () => {
                     product.category_id === 3
                       ? "300px"
                       : product.category_id === 4
-                      ? "200px"
-                      : product.category_id === 5
-                      ? "250px"
-                      : product.category_id === 6
-                      ? "300px"
-                      : product.category_id === 7
-                      ? "240px"
-                      : product.category_id === 8
-                      ? "240px"
-                      : "auto",
+                        ? "200px"
+                        : product.category_id === 5
+                          ? "250px"
+                          : product.category_id === 6
+                            ? "300px"
+                            : product.category_id === 7
+                              ? "240px"
+                              : product.category_id === 8
+                                ? "240px"
+                                : "auto",
                   marginLeft:
                     product.category_id === 4
                       ? "100px"
                       : product.category_id === 3
-                      ? "50px"
-                      : product.category_id === 5
-                      ? "75px"
-                      : product.category_id === 6
-                      ? "40px"
-                      : product.category_id === 7
-                      ? "80px"
-                      : product.category_id === 8
-                      ? "80px"
-                      : "auto",
+                        ? "50px"
+                        : product.category_id === 5
+                          ? "75px"
+                          : product.category_id === 6
+                            ? "40px"
+                            : product.category_id === 7
+                              ? "80px"
+                              : product.category_id === 8
+                                ? "80px"
+                                : "auto",
                 }}
                 onClick={() => navigate(`/products/${product._id}`)}
               />

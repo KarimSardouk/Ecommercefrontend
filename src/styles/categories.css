@@ -1,0 +1,131 @@
+.section-white {
+    background: white;
+    padding: 70px 0;
+    width: 100rem;
+    height: max-content;
+    position: relative;
+}
+
+.pslider {
+    color: rgb(32, 125, 233);
+}
+
+.h3 {
+    color: rgb(32, 125, 233);
+}
+
+.home-category {
+    /* border-color: rgb(32,125,233);
+      border-width: 2px;
+      border-style: solid; */
+    background: none;
+    text-align: center;
+    padding: 50px 20px 40px 20px;
+    margin: 2px 2px;
+    border-radius: 8px 8px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    text-align: center;
+    margin: auto;
+}
+
+.border {
+    border-color: rgb(32, 125, 233);
+    border-width: 2px;
+    border-style: solid;
+    width: 90%;
+    height: 90%;
+}
+
+.border:hover,
+.catg-img:hover {
+    cursor: pointer;
+    background-color: rgb(125, 162, 205);
+}
+
+.home-category .h3:hover {
+    color: rgb(255, 223, 110);
+}
+
+.home-category .h3 {
+    /* margin: 20px 20px 10px 20px !important; */
+    font-size: 18px;
+    font-weight: 550;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
+
+.yellow-background {
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 100%;
+    height: 50%;
+    background-color: rgb(255, 223, 110);
+    z-index: -1;
+}
+
+.section-subtitle {
+    white-space: pre-line;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: rgb(32, 125, 233) !important;
+}
+
+.catg-img {
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 10%;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+
+    margin-top: 10%;
+}
+
+.carousel {
+    padding: 5rem;
+    height: 30%;
+    width: 100vw;
+}
+
+.catg-img {
+    margin-bottom: 12%;
+}
+
+.desc {
+    display: flex;
+    flex-direction: row;
+}
+
+.ctn {
+    flex: 2;
+}
+
+.arr {
+    flex: 1;
+}
+
+.arrow {
+    width: 23px;
+    height: 25px;
+}
+
+@media (max-width: 900px) {
+    .cartg-img {
+        width: 90%;
+        height: 90%;
+    }
+}

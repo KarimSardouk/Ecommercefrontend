@@ -4,7 +4,8 @@ import "../styles/AddProduct.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import logoutimg from "../images/shutdown.png";
+import logoutimg from "../images/cart123.png";
+import Header from "./header";
 
 const AddProduct = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -110,6 +111,7 @@ const AddProduct = () => {
   return (
     <>
       <div className="sidebar">
+        <Header />
         <a className="home" onClick={handleHome}>
           Home
         </a>
@@ -204,9 +206,8 @@ const AddProduct = () => {
           </button>
 
           <div
-            className={`optional-fields ${
-              optionalFieldsVisible ? "active" : ""
-            }`}
+            className={`optional-fields ${optionalFieldsVisible ? "active" : ""
+              }`}
           >
             {/* processor: "",
     display: "",

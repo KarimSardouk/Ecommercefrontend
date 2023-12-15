@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
-import "../App.css";
+import "../styles/header.css";
 import { Helmet } from "react-helmet";
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -29,7 +29,7 @@ const Header = () => {
   const handleAllProducts = (e) => {
     e.preventDefault();
     navigate("/AllProducts");
-  };
+  }
   const getAllCategories = async () => {
     try {
       const response = await axios.get("http://localhost:8000/categories/");
@@ -48,7 +48,7 @@ const Header = () => {
   const handleAdminDash = (e) => {
     e.preventDefault();
     navigate("/AdminDash");
-  };
+  }
   return (
     <div>
       <Helmet>
@@ -65,12 +65,7 @@ const Header = () => {
       </Helmet>
       <div className="header">
         <ul className="header-ul">
-          <img
-            src="icons8-dashboard-90.png"
-            alt="this is an image"
-            className="adm-dash"
-            onClick={handleAdminDash}
-          />
+          <img src="icons8-dashboard-90.png" alt='this is an image' className="adm-dash" onClick={handleAdminDash} />
           <a href="/" className="a">
             <li>Home</li>
           </a>
@@ -95,30 +90,11 @@ const Header = () => {
               <img className="image-profile" src={profileimage} alt="" />
             </a>
 
-            <img
-              src="icons8-dashboard-100.png"
-              alt="img"
-              className="dashboard-img"
-              onClick={handleDashboard}
-            />
+            <img src='icons8-dashboard-100.png' alt='img' className="dashboard-img" onClick={handleDashboard} />
           </div>
         </ul>
       </div>
-      <div className="box-container">
-        {categories &&
-          categories.map((category, index) => (
-            <div className="box-1" key={index}>
-              <img
-                src={category.category_image}
-                alt={"image"}
-                className="box-1-image"
-              />
-              <h2 className="box-1-name" onClick={handleAllProducts}>
-                {category.categoryName}
-              </h2>
-            </div>
-          ))}
-      </div>
+
     </div>
   );
 };

@@ -14,10 +14,13 @@ import Statistics from "./Components/Statistics";
 import AdminDash from "./Components/AdminDash";
 import AllSellers from "./Components/AllSellers";
 import ProductView from "./Components/ProductView";
-import Header from "./Components/Header";
+import Header from "./Components/header"; // Assuming you have a Header component
 import ApproveProducts from "./Components/ApproveProducts";
 import AllProductsTable from "./Components/AllProductsTable";
 import AddProduct from "./Components/AddProduct";
+import Brands from "./Components/Brands";
+import Statistics1 from "./Components/Statistics1";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -25,10 +28,40 @@ function App() {
       <Router>
         <Header />
         <Routes>
+
+          <Route
+            path="/"
+            element={
+              <>
+
+                <Home />
+                <About />
+                <Brands />
+                <Statistics1 />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/Category"
+            element={
+              <>
+                <Category />
+                <Footer />
+              </>
+            }
+          />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Category" element={<Category />} />
-          <Route path="/AllProducts" element={<AllProducts />} />
+          <Route
+            path="/AllProducts"
+            element={
+              <>
+                <AllProducts />
+
+              </>
+            }
+          />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/ApproveProducts" element={<ApproveProducts />} />
@@ -37,7 +70,10 @@ function App() {
           <Route path="/AllSellers" element={<AllSellers />} />
           <Route path="/AllProductsTable" element={<AllProductsTable />} />
           <Route path="/products/:productId" element={<ProductView />} />
-          <Route path="/ApproveProducts/:productId" element={<ProductView />} />
+          <Route
+            path="/ApproveProducts/:productId"
+            element={<ProductView />}
+          />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/ApproveProducts" element={<ApproveProducts />} />
           <Route path="/AddProduct" element={<AddProduct />} />
@@ -48,14 +84,6 @@ function App() {
             element={
               <ProtectedRoute adminOnly={true}>
                 <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute adminOnly={false}>
-                <Home />
               </ProtectedRoute>
             }
           />

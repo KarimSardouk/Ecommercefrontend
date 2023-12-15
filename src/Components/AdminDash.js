@@ -4,6 +4,7 @@ import "../styles/Dashboard.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import logoutimg from "../images/shutdown.png";
+import Header from "./header";
 // import dellimage from "../images/dell-inspiron.png";
 const AdminDash = () => {
   const [users, setUsers] = useState([]);
@@ -66,6 +67,8 @@ const AdminDash = () => {
   return (
     <>
       <div className="sidebar">
+        <Header />
+
         <a className="home" onClick={handleHome}>
           Home
         </a>
