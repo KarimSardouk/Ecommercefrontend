@@ -4,6 +4,12 @@ import { useParams } from "react-router-dom";
 import cart123 from "../images/cart123.png";
 import "../styles/singleproduct.css";
 
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
+
+
+
+
 const ProductView = () => {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1); // Initial quantity is set to 1
@@ -52,6 +58,10 @@ const ProductView = () => {
       // Increment remaining stock
       setRemainingStock((prevStock) => prevStock + 1);
     }
+    
+    const showToast = () => {
+        toast("Added to Cart");}
+     
   };
 
   return (
@@ -87,7 +97,10 @@ const ProductView = () => {
                   <input type="text" value={quantity} readOnly />
                   <button onClick={handleIncrement}>+</button>
                   <div className="button-add-12">
-                    <button>Add to Cart</button>
+
+                  <button onClick={showToast}>Show Toast</button>
+                  <ToastContainer />
+
                   </div>
                 </div>
                 <h2>Total Price: ${product.data.price * quantity}</h2>
