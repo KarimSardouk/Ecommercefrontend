@@ -14,7 +14,7 @@ import Statistics from "./Components/Statistics";
 import AdminDash from "./Components/AdminDash";
 import AllSellers from "./Components/AllSellers";
 import ProductView from "./Components/ProductView";
-import Header from "./Components/header"; // Assuming you have a Header component
+import Header from "./Components/Header"; // Assuming you have a Header component
 import ApproveProducts from "./Components/ApproveProducts";
 import AllProductsTable from "./Components/AllProductsTable";
 import AddProduct from "./Components/AddProduct";
@@ -22,7 +22,6 @@ import Brands from "./Components/Brands";
 import Statistics1 from "./Components/Statistics1";
 import Footer from "./Components/Footer";
 import Contact1 from "./Components/ContactUsPage";
-
 function App() {
   return (
     <div>

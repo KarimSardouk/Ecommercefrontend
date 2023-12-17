@@ -1,3 +1,4 @@
+
 #sales-people {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -77,4 +78,7 @@
   width: 100px;
   height: 100px;
   margin-left: -10px;
+}
+.overflow{
+  overflow-x: auto;
 }

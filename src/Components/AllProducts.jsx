@@ -2,11 +2,11 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/allproducts.css";
-import cartimage from "../Images/cartimage.png";
-import profileimage from "../Images/profileimage.png";
-import dellimage from "../Images/dell-inspiron.png";
-import cart123 from "../Images/cart123.png";
-import Header from "./header";
+import cartimage from "../images/cartimage.png";
+import profileimage from "../images/profileimage.png";
+import dellimage from "../images/dell-inspiron.png";
+import cart123 from "../images/cart123.png";
+import Header from "./Header";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -28,7 +28,7 @@ const AllProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/product/getAll/"
+          "http://localhost:8000/products/getAll"
         );
         setProducts(response.data);
       } catch (error) {
@@ -59,11 +59,11 @@ const AllProducts = () => {
 
         {error && <div style={{ color: "red" }}>{error}</div>}
 
-        <div className="box-container">
+        <div className="box11-container">
           {filteredProducts.map((product) => (
-            <div key={product._id} className="box-1">
+            <div key={product._id} className="box-11">
               <img
-                className="box-1-image"
+                className="box-11-image"
                 src={product.product_image}
                 alt=""
                 style={{
@@ -98,17 +98,17 @@ const AllProducts = () => {
                 }}
                 onClick={() => navigate(`/products/${product._id}`)}
               />
-              <h2 className="box-1-name">{product.product_name}</h2>
-              <h3 className="box-1-price">
+              <h2 className="box-11-name">{product.product_name}</h2>
+              <h3 className="box-11-price">
                 {product.price % 1 === 0
                   ? `$${product.price}.00`
                   : product.price}
               </h3>
-              <div className="boxing123">
-                <Link to={`/products/${product._id}`} className="box-1-product">
+              <div className="boxing1123">
+                <Link to={`/products/${product._id}`} className="box-11-product">
                   View Product
                 </Link>
-                <div className="box-1-cart">
+                <div className="box-11-cart">
                   <img src={cart123} alt="" />
                 </div>
               </div>

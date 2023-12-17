@@ -1,3 +1,4 @@
+
 .about {
     width: 100%;
     height: fit-content;
@@ -34,4 +35,15 @@
     margin: auto;
     height: 100%;
     margin: auto;
+}
+
+@media only screen and (max-width: 490px) {
+    .about {
+        width: 125%;
+        height: fit-content;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: flex;
+    }
+
 }

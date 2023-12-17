@@ -1,9 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-import images from "../Images/laptop.png";
+import images from "../images/laptop.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../Images/right-arrow.png";
+import image1 from "../images/right-arrow.png";
 
 function CategoriesHome() {
   var settings = {
@@ -81,7 +81,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">
@@ -96,7 +96,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">
@@ -111,7 +111,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">
@@ -126,7 +126,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">
@@ -141,7 +141,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">
@@ -156,7 +156,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">
@@ -171,7 +171,7 @@ function CategoriesHome() {
                 <div className="desc">
                   <div className="ctn">
                     {" "}
-                    <h3>Category Name</h3>
+                    <h3 className="h3">Category Name</h3>
                   </div>
 
                   <div className="arr">

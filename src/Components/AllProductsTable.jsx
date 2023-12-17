@@ -3,19 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/allproducts.css";
 import "../styles/AllProductsTable.css";
-import cartimage from "../Images/cartimage.png";
-import profileimage from "../Images/profileimage.png";
-import dellimage from "../Images/dell-inspiron.png";
-import cart123 from "../Images/cart123.png";
-import logoutimg from "../Images/shutdown.png";
-import Header from "./header";
+import cartimage from "../images/cartimage.png";
+import profileimage from "../images/profileimage.png";
+import dellimage from "../images/dell-inspiron.png";
+import cart123 from "../images/cart123.png";
+import logoutimg from "../images/shutdown.png";
+import Header from "./Header";
 
 const AllProductsTable = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
   const [error, setError] = useState(null);
-
   const [sortOrder, setSortOrder] = useState("asc");
   const [sortColumn, setSortColumn] = useState("product_name");
 
@@ -49,11 +48,12 @@ const AllProductsTable = () => {
   }, [products, filter, sortOrder, sortColumn]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchAllProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/product/getAll/"
+          "http://localhost:8000/products/getAll"
         );
+        console.log(response);
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching Products:", error);
@@ -63,7 +63,7 @@ const AllProductsTable = () => {
       }
     };
 
-    fetchProducts();
+    fetchAllProducts();
   }, []);
 
   if (loading) {
@@ -156,7 +156,7 @@ const AllProductsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredProducts.map((product, index) => (
+          {filteredProducts && filteredProducts.map((product,index) => (
             <tr key={index}>
               <td className="table1-description2">{product.product_name}</td>
               <td className="table1-description1">{product.brand}</td>

@@ -2,8 +2,8 @@ import React from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/ContactUsPage.css";
-import Header from "../Components/header";
-import telephone from "../Images/telephone123.png";
+import Header from "../Components/Header";
+import telephone from "../images/telephone123.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -59,7 +59,7 @@ const Contact1 = () => {
                   id="first-name"
                   name="user_name"
                   required
-                  placeholder="FIRST"
+                  placeholder="First name"
                 />
                 <input
                   className="inputf12"
@@ -67,7 +67,7 @@ const Contact1 = () => {
                   id="last-name"
                   name="user_lastname"
                   required
-                  placeholder="LAST"
+                  placeholder="Last name"
                 />
               </div>
             </div>
@@ -80,6 +80,7 @@ const Contact1 = () => {
                 id="emailf"
                 name="user_email"
                 required
+                placeholder="Email address"
               />
             </div>
 
@@ -90,6 +91,7 @@ const Contact1 = () => {
                 type="text"
                 id="subjectf"
                 name="subject"
+                placeholder="Subject name"
                 required
               />
             </div>

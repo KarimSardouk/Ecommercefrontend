@@ -21,7 +21,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="contactUs">
-                <h1 className="footerTitle">Contact Us</h1>
+                <h1 className="footerTitle1">Contact Us</h1>
                 <ul className="ulContact">
                     <li className="liContact">
                         <div className="svg">
@@ -45,7 +45,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="newsLetter">
-                <h1 className="footerTitle">News Letter</h1>
+                <h1 className="footerTitle2">News Letter</h1>
                 <p className="newsParagraph">
                     Want to receive regular updates about our services? Sign up and we’ll
                     keep you posted!

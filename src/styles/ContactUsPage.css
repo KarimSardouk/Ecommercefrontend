@@ -1,3 +1,4 @@
+
 .contact-me {
   display: flex;
   margin-left: 100px;
@@ -66,6 +67,7 @@
   background-color: #fafafa;
   border: 1px solid #dddddd;
   float: left;
+  border-radius: 20px;
 }
 
 #emailf {
@@ -201,6 +203,7 @@
   font-size: 20px;
   float: left;
   margin-left: 150px;
+  border-radius: 20px;
 }
 
 .submitf:hover {

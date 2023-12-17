@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import cart123 from "../Images/cart123.png";
+import cart123 from "../images/cart123.png";
 import "../styles/singleproduct.css";
 
 const ProductView = () => {
