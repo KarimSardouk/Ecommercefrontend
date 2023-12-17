@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
+
 function Login() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,15 +25,19 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateInput()) return;
-
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/loginUser",
+        "http://localhost:8000/user/loginUser",
         {
           email,
           password,
         }
       );
+      const userId = response.data.data._id; // Assuming the response contains userId
+      Cookies.set("userEmail", email, { expires: 7 });
+      Cookies.set("userId", userId, { expires: 50 });
+      console.log(response.data.data._id);
+      console.log(userId);
       console.log(response.data);
       navigate("/");
     } catch (error) {
@@ -44,7 +50,7 @@ function Login() {
     if (!validateInput()) return;
 
     try {
-      const response = await axios.post("http://localhost:8000/users/addUser", {
+      const response = await axios.post("http://localhost:8000/user/addUser", {
         name,
         lastName,
         email,
@@ -83,7 +89,7 @@ function Login() {
   return (
     <div className="root">
       <div className="body">
-          <div className="container" id="container">
+        <div className="container" id="container">
           <div className="form-container sign-up-container">
             {error && <p className="error-message">{error}</p>}
             <form onSubmit={handleRegister} className="form1" action="#">
@@ -92,18 +98,18 @@ function Login() {
               <input
                 className="input1"
                 required
-				value={name}
+                value={name}
                 type="text"
                 placeholder="Name"
-				onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 className="input2"
                 required
-				value={lastName}
+                value={lastName}
                 type="text"
                 placeholder="Last Name"
-				onChange={(e) => setLastName(e.target.value)}
+                onChange={(e) => setLastName(e.target.value)}
               />
               <input
                 className="input3"
@@ -121,7 +127,7 @@ function Login() {
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-               <input
+              <input
                 className="input5"
                 required
                 value={phoneNumber}

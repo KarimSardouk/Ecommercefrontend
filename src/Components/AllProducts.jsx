@@ -1,19 +1,26 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/AllProducts.css";
-import cartimage from "../images/cartimage.png";
-import profileimage from "../images/profileimage.png";
-import dellimage from "../images/dell-inspiron.png";
-import cart123 from "../images/cart123.png";
+import "../styles/allproducts.css";
+import cartimage from "../Images/cartimage.png";
+import profileimage from "../Images/profileimage.png";
+import dellimage from "../Images/dell-inspiron.png";
+import cart123 from "../Images/cart123.png";
+import Cookies from "js-cookie";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
-  const [counter, setCounter] = useState(0);
   const [error, setError] = useState(null);
+  const [count, setCount] = useState(0);
+  const userId = Cookies.get("userId");
+  const userEmail = Cookies.get("userEmail");
 
+  const handleIncrement = () => {
+    setCount(count + 1);
+    return count + 1;
+  };
   const filteredProducts = useMemo(() => {
     console.log("Filtering using Memo...");
     return products.filter((product) =>
@@ -40,6 +47,22 @@ const AllProducts = () => {
 
     fetchProducts();
   }, []);
+
+  const addToCart = async (productId, price, product_name) => {
+    try {
+      const updatedCount = handleIncrement(count);
+      const response = await axios.post("http://localhost:8000/carts/add", {
+        user_id: userId,
+        products_id: productId,
+        quantity_to_purchase: updatedCount,
+        price: price,
+        product_name: product_name,
+      });
+      console.log("Product added to cart:", response.data);
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -107,7 +130,12 @@ const AllProducts = () => {
                 <Link to={`/products/${product._id}`} className="box-1-product">
                   View Product
                 </Link>
-                <div className="box-1-cart">
+                <div
+                  className="box-1-cart"
+                  onClick={() =>
+                    addToCart(product._id, product.price, product.product_name)
+                  }
+                >
                   <img src={cart123} alt="" />
                 </div>
               </div>
