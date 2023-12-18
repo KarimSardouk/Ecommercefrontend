@@ -117,7 +117,7 @@ const ProductView = () => {
                   ) : (
                     <div>
                       {product.data.brand && (
-                        <p className="brand">Brand: {product.data.brand}</p>
+                        <p className="brand1">Brand: {product.data.brand}</p>
                       )}
                       {product.data.modelNumber && (
                         <p className="modelNumber">

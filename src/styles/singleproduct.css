@@ -116,6 +116,12 @@
   font-size: 16px;
   margin: 0;
 }
+.brand1 {
+  width: 200px;
+  height: auto;
+  filter: grayscale(100%);
+  margin-left: 0;
+}
 
 .quantity-input input {
   width: 40px;

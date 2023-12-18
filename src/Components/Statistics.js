@@ -6,26 +6,48 @@ import { useNavigate } from "react-router-dom";
 
 const Statistics = () => {
   const navigate = useNavigate();
-  const handleHome= async (e) => {
-      e.preventDefault();
-      navigate("/");
-    }
-    const handleApprove = async (e) => {
-      e.preventDefault();
-      navigate("/ApproveProducts");
-    }
-    const handleStatistics = async (e) => {
-      e.preventDefault();
-      navigate("/Statistics")
-    }
-    const AllProducts = async (e) => {
-      e.preventDefault();
-      navigate("/AllProducts")
-    }
-    const handleSellers = async (e) => {
-      e.preventDefault();
-      navigate("/AllSellers")
-    }
+
+  // Mock data for most sold and most profited products
+  const mostSoldProduct = {
+    name: "Car Charger Denmen",
+    price: "$50",
+    quantitySold: 14,
+  };
+
+  const mostProfitedProduct = {
+    name: "Dell Inspiron 15.6 Inch Ryzen 5",
+    price: "$800",
+    quantitySold: 1,
+  };
+
+  // Mock data for monthly revenue
+  const monthlyRevenue = 1500; // Update this value based on your data
+
+  const handleHome = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
+  const handleApprove = (e) => {
+    e.preventDefault();
+    navigate("/ApproveProducts");
+  };
+
+  const handleStatistics = (e) => {
+    e.preventDefault();
+    navigate("/Statistics");
+  };
+
+  const AllProducts = (e) => {
+    e.preventDefault();
+    navigate("/AllProducts");
+  };
+
+  const handleSellers = (e) => {
+    e.preventDefault();
+    navigate("/AllSellers");
+  };
+
   return (
     <div>
       <Helmet>
@@ -57,21 +79,38 @@ const Statistics = () => {
           Approve products
         </a>
       </div>
-      
+
       <div className="flex">
-      <h1 className="stats-header">Statistics</h1>
-      < div className="sales-rev">
-      <div className="most-sold">
-        <p className="stats-information1">most product sold</p>
-        <p className="stats-information2">name:</p>
-        <p className="stats-information3">price:</p>
+        <h1 className="stats-header">Statistics</h1>
+        <div className="sales-rev">
+          <div className="most-sold">
+            <p className="stats-information1">
+              <h2>Most product sold</h2>
+            </p>
+            <p className="stats-information2">Name: {mostSoldProduct.name}</p>
+            <p className="stats-information3">
+              Quantity Sold: {mostSoldProduct.quantitySold}
+            </p>
+          </div>
+          <div className="most-profited">
+            <p className="stats-information4">
+              <h2>Most profited product</h2>
+            </p>
+            <p className="stats-information5">
+              Name: {mostProfitedProduct.name}
+            </p>
+            <p className="stats-information6">
+              Quantity Sold: {mostProfitedProduct.quantitySold}
+            </p>
+          </div>
+          <div className="revenue">
+            <p className="stats-information7">
+              <h2>This month's revenue</h2>
+            </p>
+            <p className="stats-information8">Amount (in$): {monthlyRevenue}</p>
+          </div>
+        </div>
       </div>
-      <div className="revenue">
-        <p className="stats-information4">This month's revenue</p>
-        <p className="stats-information5">Amount (in$)</p>
-      </div>
-      </div>
-      </div> 
     </div>
   );
 };

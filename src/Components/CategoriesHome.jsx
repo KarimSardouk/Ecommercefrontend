@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import images from "../Images/laptop.png";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image1 from "../Images/right-arrow.png";
 
-function CategoriesHome() {
+const CategoriesHome = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8000/product/getAll/"
+        );
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching Products:", error);
+        setError("Error fetching Products. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Display first 4, skip 4, and then display the next 4
+  const displayedProducts = [...products.slice(0, 4), ...products.slice(8, 12)];
+
   var settings = {
     dots: true,
     customPaging: (i) => (
@@ -60,131 +87,34 @@ function CategoriesHome() {
 
         <div className="carousel">
           <Slider {...settings}>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3 className="h3">Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
+            {displayedProducts.map((product) => (
+              <div
+                key={product._id}
+                className="home-category"
+                onClick={() => navigate(`/products/${product._id}`)} // Add the click event
+              >
+                <div className="border">
+                  <img
+                    src={product.product_image}
+                    className="catg-img"
+                    alt="pic"
+                  />
+                  <div className="desc">
+                    <div className="ctn">
+                      <h3 className="h3">{product.product_name}</h3>
+                    </div>
+                    <div className="arr">
+                      <img src={image1} className="arrow" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="home-category">
-              <div className="border">
-                <img src={images} className="catg-img" alt="pic" />
-                <div className="desc">
-                  <div className="ctn">
-                    {" "}
-                    <h3>Category Name</h3>
-                  </div>
-
-                  <div className="arr">
-                    <img src={image1} className="arrow" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </Slider>
         </div>
       </section>
     </div>
   );
-}
+};
 
 export default CategoriesHome;
