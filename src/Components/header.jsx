@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import adminDashImg from "../images/icons8-dashboard-100.png"
+import sellerDashImg from "../images/icons8-dashboard-90.png"
 import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
 import "../styles/Header.css";
@@ -44,6 +46,10 @@ const Header = () => {
     e.preventDefault();
     navigate("/AllProducts");
   };
+  const handleCategory = (e) =>{
+    e.preventDefault();
+    navigate("/Category");
+  }
   const getAllCategories = async () => {
     try {
       const response = await axios.get("http://localhost:8000/categories/");
@@ -128,13 +134,13 @@ const Header = () => {
       </div> */}
       <div className={`topnav ${isOpen ? "responsive" : ""}`} id="myTopnav">
       <img
-            src="icons8-dashboard-90.png"
+            src={adminDashImg}
             alt="this is an image"
             className="adm-dash"
             onClick={handleAdminDash}
           />
                       <img
-              src="icons8-dashboard-100.png"
+              src={sellerDashImg}
               alt="img"
               className="dashboard-img"
               onClick={handleDashboard}
@@ -148,7 +154,7 @@ const Header = () => {
         <a className="a contact"  onClick={handleContact} >
           Contact
         </a>
-        <a className="a" href="#Category">
+        <a className="a" onClick={handleCategory}>
           Category
         </a>
         <a className="a allproducts" onClick={handleAllProducts}>
