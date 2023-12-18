@@ -176,7 +176,7 @@ const ApproveProducts = () => {
 
   return (
     <div>
-      <h1>All Products</h1>
+      <h1 className="all-products">All Products</h1>
       <div className="sidebar">
         <a className="home" onClick={handleHome}>
           Home
@@ -200,6 +200,7 @@ const ApproveProducts = () => {
       <div>
         <ToastContainer />
         <input
+        
           id="myInput"
           placeholder="Filter names"
           value={filter}

@@ -49,9 +49,9 @@ const AllProducts = () => {
   return (
     <div>
       <h1>All Products</h1>
-      <div>
+      <div className="biggest-box">
         <input
-          id="myInput"
+          id="myInput1"
           placeholder="Filter names"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}

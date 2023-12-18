@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import Home from "./Components/Home";
@@ -22,6 +23,9 @@ import Brands from "./Components/Brands";
 import Statistics1 from "./Components/Statistics1";
 import Footer from "./Components/Footer";
 import Contact1 from "./Components/ContactUsPage";
+import CategoryView from "./Components/CategoryView";
+import CategoryProducts from "./Components/CategoryProducts";
+import CategoryOnPress from "./Components/CategoryOnPress";
 
 function App() {
   return (
@@ -41,24 +45,13 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/Category"
-            element={
-              <>
-                <Category />
-                <Footer />
-              </>
-            }
-          />
+          <Route path="/Category" element={<Category />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/AllProducts" element={<AllProducts />} />
           <Route
-            path="/AllProducts"
-            element={
-              <>
-                <AllProducts />
-              </>
-            }
+            path="/product/categoryName/:categoryName"
+            element={<CategoryProducts />}
           />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Contact1" element={<Contact1 />} />
@@ -71,9 +64,16 @@ function App() {
           <Route path="/products/:productId" element={<ProductView />} />
           <Route path="/ApproveProducts/:productId" element={<ProductView />} />
           <Route path="/products" element={<AllProducts />} />
-          <Route path="/ApproveProducts" element={<ApproveProducts />} />
           <Route path="/AddProduct" element={<AddProduct />} />
-
+          <Route path="/CategoryView" element={<CategoryView />} />
+          <Route
+            path="/CategoryProducts/:category_id"
+            element={<CategoryProducts />}
+          />
+          <Route
+            path="/product/product/categoryName/:categoryName"
+            element={<CategoryOnPress />}
+          />
           <Route path="/login" element={<Login />} />
           <Route
             path="/dashboard"
