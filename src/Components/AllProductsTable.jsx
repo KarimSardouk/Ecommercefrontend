@@ -7,7 +7,7 @@ import profileimage from "../images/profileimage.png";
 import dellimage from "../images/dell-inspiron.png";
 import cart123 from "../images/cart123.png";
 import logoutimg from "../images/shutdown.png";
-import Header from "../Components/header";
+import Header from "./Header";
 
 const AllProductsTable = () => {
   const [products, setProducts] = useState([]);
@@ -155,14 +155,17 @@ const AllProductsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredProducts && filteredProducts.map((product,index) => (
-            <tr key={index}>
-              <td className="table1-description2">{product.product_name}</td>
-              <td className="table1-description1">{product.brand}</td>
-              <td className="table1-description1">{product.price}</td>
-              <td className="table1-description1">{product.stock_quantity}</td>
-            </tr>
-          ))}
+          {filteredProducts &&
+            filteredProducts.map((product, index) => (
+              <tr key={index}>
+                <td className="table1-description2">{product.product_name}</td>
+                <td className="table1-description1">{product.brand}</td>
+                <td className="table1-description1">{product.price}</td>
+                <td className="table1-description1">
+                  {product.stock_quantity}
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>

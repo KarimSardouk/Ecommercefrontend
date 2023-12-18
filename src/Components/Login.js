@@ -37,9 +37,7 @@ function Login() {
         }
       );
       console.log(response.data);
-      const token = response.data.data;
-      sessionStorage.setItem("authToken", token);
-      console.log(token);
+      sessionStorage.setItem("authToken", response.data.data.token);
       navigate("/");
       } catch (error) {
       setError(error.response.data.message);

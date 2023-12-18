@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import cart123 from "../images/cart123.png";
-import Header from "../Components/header";
+import Header from "./Header";
 
 const CategoryView = () => {
   const [products, setProducts] = useState([]);

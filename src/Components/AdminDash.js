@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import logoutimg from "../images/shutdown.png";
 // import dellimage from "../images/dell-inspiron.png";
+import { getUserID } from "../Util/GetUserData";
 const AdminDash = () => {
   const [data, setData] = useState([]);
   const [userID, setUserID] = useState(null);
   const [users, setUsers] = useState([]); 
+  const [selectedUser, setSelectedUser] = useState(null);
   const [name, setName] = useState([]);
   const [lastName, setLastName] = useState([]);
   const [email, setEmail] = useState([]);
@@ -17,16 +19,22 @@ const AdminDash = () => {
   useEffect(() => {
     getAllUsers();
   }, []);
-  const deleteUser = async (userId) => {
-    try {
-      //fill the http url with your own
-      const response = await axios.delete(
-        `http://localhost:8000/user/deleteUser/${userId}`
-      );
-      getAllUsers();
-    } catch (error) {
-      console.log("Error deleting user", error);
-    }
+  const handleDeleteUser = (user_id) => {
+    fetch(`http://localhost:8000/user/deleteUser/${user_id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          window.alert("User deleted successfully!");
+        } else {
+          window.alert("User couldn't be deleted!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting product:", error);
+      });
   };
 
   const getAllUsers = async () => {
@@ -41,7 +49,7 @@ const AdminDash = () => {
       setPhoneNumber(response.data);
       setAddress(response.data);
     } catch (error) {
-      console.log("error fetching events", error);
+      console.log("error fetching users", error);
     }
   };
   const navigate = useNavigate();
@@ -58,7 +66,7 @@ const AdminDash = () => {
     navigate("/Statistics");
   };
   const handleLogout = () => {
-    localStorage.removeItem("user_id");
+    localStorage.removeItem("user._id");
     navigate("/");
   };
   const AllProducts = async (e) => {
@@ -69,6 +77,7 @@ const AdminDash = () => {
     e.preventDefault();
     navigate("/AllSellers");
   };
+
   return (
     <>
       <div className="sidebar">
@@ -112,7 +121,8 @@ const AdminDash = () => {
               <td className="t-d-8">{user.phoneNumber}</td>
               <td className="t-d-9">{user.address}</td>
               <td className="t-d-fourth">
-              <button onClick={deleteUser}>Delete User</button>
+              <button onClick={() => handleDeleteUser(user._id)}
+                >Delete User</button>
               </td>
             </tr>
           ))}
