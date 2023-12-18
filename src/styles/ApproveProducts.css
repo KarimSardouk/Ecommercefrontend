@@ -145,3 +145,305 @@
 .update-button-1:hover {
   background-color: lightblue; /* Darker green color on hover */
 }
+@media screen and (max-width: 410px) {
+  /* Add these styles to your styles/ApproveProducts.css or in your existing styles */
+
+  /* Updated styles for buttons */
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .box-container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 110px;
+    margin-right: 110px;
+  }
+
+  .button-first,
+  .button-second,
+  .delete-button {
+    border-radius: 5px; /* Adjusted border-radius for all buttons */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .button-first,
+  .button-second {
+    border: 1px solid white;
+    background-color: #207dff;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 25px; /* Adjusted padding for all buttons */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .delete-button {
+    background-color: #ff4d4d; /* Red color for delete button */
+    color: #ffffff;
+    padding: 8px 15px; /* Adjusted padding for delete button */
+  }
+
+  /* Styles for modal */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the page */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Styles for modal form */
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content label {
+    margin-bottom: 10px;
+  }
+
+  .modal-content input {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .modal-content button {
+    background-color: #207dff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Styles for modal delete button */
+  .modal-content .delete-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+  }
+  /* Add this CSS to your existing styles/ApproveProducts.css or your preferred styles file */
+
+  /* Delete Product Button */
+  .delete-button-1 {
+    background-color: #ff4d4d; /* Red color */
+    color: #fff; /* White text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 15px; /* Adjust the spacing between buttons if needed */
+    margin-left: 15px;
+  }
+
+  .delete-button-1:hover {
+    background-color: #cc0000; /* Darker red color on hover */
+  }
+
+  /* Update Product Button */
+  .update-button-1 {
+    background-color: rgb(50, 53, 212); /* Green color */
+    color: #fff; /* White text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .all-products {
+    margin-left: 150px;
+  }
+  #myInput {
+    width: 180px;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 830px) {
+  /* Add these styles to your styles/ApproveProducts.css or in your existing styles */
+
+  /* Updated styles for buttons */
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .box-container-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 110px;
+  }
+
+  .button-first,
+  .button-second,
+  .delete-button {
+    border-radius: 5px; /* Adjusted border-radius for all buttons */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .button-first,
+  .button-second {
+    border: 1px solid white;
+    background-color: #207dff;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 25px; /* Adjusted padding for all buttons */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .delete-button {
+    background-color: #ff4d4d; /* Red color for delete button */
+    color: #ffffff;
+    padding: 8px 15px; /* Adjusted padding for delete button */
+  }
+
+  /* Styles for modal */
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the page */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Styles for modal form */
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-content label {
+    margin-bottom: 10px;
+  }
+
+  .modal-content input {
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .modal-content button {
+    background-color: #207dff;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Styles for modal delete button */
+  .modal-content .delete-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+  }
+  /* Add this CSS to your existing styles/ApproveProducts.css or your preferred styles file */
+
+  /* Delete Product Button */
+  .delete-button-1 {
+    background-color: #ff4d4d; /* Red color */
+    color: #fff; /* White text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 15px; /* Adjust the spacing between buttons if needed */
+    margin-left: 15px;
+  }
+
+  .delete-button-1:hover {
+    background-color: #cc0000; /* Darker red color on hover */
+  }
+
+  /* Update Product Button */
+  .update-button-1 {
+    background-color: rgb(50, 53, 212); /* Green color */
+    color: #fff; /* White text */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .all-products {
+    margin-left: 150px;
+  }
+  #myInput {
+    width: 180px;
+  }
+}

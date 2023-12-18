@@ -35,3 +35,41 @@
   padding: 10px 15px;
   cursor: pointer;
 }
+@media screen and (max-width: 900px) {
+  .add-product-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    margin-left: 120px;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .optional-fields-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .optional-fields {
+    display: none;
+  }
+
+  .optional-fields.active {
+    display: block;
+  }
+
+  .submit-button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+}

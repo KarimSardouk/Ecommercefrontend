@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/ContactUsPage.css";
-import Header from "./Header";
+import Header from "../Components/header";
 import telephone from "../images/telephone123.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

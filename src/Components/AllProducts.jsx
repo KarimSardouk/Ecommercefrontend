@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/allproducts.css";
+import "../styles/productsAll.css";
 import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
 import dellimage from "../images/dell-inspiron.png";
 import cart123 from "../images/cart123.png";
-import Header from "./Header";
+// import header from "./Components/header";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -49,9 +49,9 @@ const AllProducts = () => {
   return (
     <div>
       <h1>All Products</h1>
-      <div>
+      <div className="biggest-box">
         <input
-          id="myInput"
+          id="myInput1"
           placeholder="Filter names"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
@@ -105,7 +105,10 @@ const AllProducts = () => {
                   : product.price}
               </h3>
               <div className="boxing1123">
-                <Link to={`/products/${product._id}`} className="box-11-product">
+                <Link
+                  to={`/products/${product._id}`}
+                  className="box-11-product"
+                >
                   View Product
                 </Link>
                 <div className="box-11-cart">

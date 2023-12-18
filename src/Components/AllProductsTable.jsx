@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/allproducts.css";
 import "../styles/AllProductsTable.css";
 import cartimage from "../images/cartimage.png";
 import profileimage from "../images/profileimage.png";
 import dellimage from "../images/dell-inspiron.png";
 import cart123 from "../images/cart123.png";
 import logoutimg from "../images/shutdown.png";
-import Header from "./Header";
+import Header from "../Components/header";
 
 const AllProductsTable = () => {
   const [products, setProducts] = useState([]);

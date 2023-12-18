@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/Home.css";
 import { Helmet } from "react-helmet";
-import Header from "./Header";
 import HeroSection from "../Components/HeroSection";
 import "../styles/Hero.css";
 import CategoriesHome from "../Components/CategoriesHome";

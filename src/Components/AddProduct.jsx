@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import cartimage from "../images/cartimage.png";
-import Header from "./Header";
+import Header from "../Components/header";
 import logoutimg from "../images/shutdown.png";
 
 const AddProduct = () => {
