@@ -2,12 +2,28 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/cart.css";
 import Cookies from "js-cookie";
-import Header from "./Header";
 
 const Cart = () => {
   const userId = Cookies.get("userId");
   const [cartItems, setCartItems] = useState([]);
   const [productsQuantity, setProductsQuantity] = useState({});
+  const handleDeleteProduct = (product_id) => {
+    fetch(`http://localhost:8000/carts/delete/${product_id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          window.alert("Product deleted successfully!");
+        } else {
+          window.alert("Product couldn't be deleted!");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting product:", error);
+      });
+  };
 
   useEffect(() => {
     fetchCartItems();
@@ -34,7 +50,6 @@ const Cart = () => {
 
       setProductsQuantity(groupedItems);
 
-      // Filter the fetched items to remove duplicates based on product_id
       const uniqueItems = fetchedCartItems.filter(
         (item, index, self) =>
           index === self.findIndex((t) => t.products_id === item.products_id)
@@ -52,7 +67,6 @@ const Cart = () => {
 
   return (
     <div className="mainboxcart">
-      <Header />
       <h1>
         <span className="blues">Your Shopping Cart</span>
       </h1>
@@ -81,7 +95,7 @@ const Cart = () => {
                 <td className="blues">
                   <button
                     className="delete"
-                    //                  onClick={() => handleDeleteItem(item._id)}
+                    onClick={() => handleDeleteProduct(item._id)}
                   >
                     Delete
                   </button>
