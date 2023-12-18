@@ -1,0 +1,78 @@
+
+.footer {
+  display: flex;
+  background-color: #207de9;
+  color: white;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.categories,
+.contactUs,
+.newsLetter {
+  width: 25%;
+}
+
+.ulCaregories,
+.ulContact {
+  list-style-type: none;
+}
+
+.footerTitle1 {
+  margin: 0 0 15px 90px;
+}
+.footerTitle2 {
+  margin: 0px 10px 10px 10px;
+}
+
+.contactSvg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.liContact {
+  display: flex;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+}
+
+.ulCategories li {
+  text-align: left;
+  margin-left: 100px;
+  list-style-type: none;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.newsParagraph {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.ulContact {
+  margin-left: 50px;
+}
+
+.newsLetter {
+  margin-right: 10px;
+}
+
+.newsButton {
+  background-color: white;
+  color: #207de9;
+  margin-top: 10px;
+  border: 0px;
+  width: 130px;
+  height: 35px;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.newsInput {
+  width: 250px;
+  height: 30px;
+  margin-top: 5px;
+}

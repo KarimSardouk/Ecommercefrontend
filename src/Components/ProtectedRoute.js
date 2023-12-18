@@ -8,7 +8,9 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
   // else (user not logged in) then isAuthenticated is false then it will navigate to login
 
   // if user logged in and tried to open /dashboard protected with adminOnly = true, then it will check if the user has admin role it will redirect to login
-
+  if(!isAuthenticated){
+    return <Navigate to="/"/>;
+  }
   if (!isAuthenticated || (adminOnly && userRole !== "admin")) {
     return <Navigate to="/login" />;
   }

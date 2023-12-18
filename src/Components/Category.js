@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import cartimage from "../images/cartimage.png";
-// import profileimage from "../images/profileimage.png";
-import "../App.css";
+import "../App.css"
 const Category = () => {
   const [categories, setCategories] = useState([]);
   const [image, setImage] = useState([]);
@@ -33,10 +31,7 @@ const Category = () => {
   }
   return (
     <div>
-      <h1 className="categories">
-      <img src="icons8-home-150.png" alt="home" className="home-icon" onClick={handleHome} />
-        
-        Categories</h1>
+        <h1 className="Categorie">Categories</h1>
       <div className="box-container">
         {categories &&
           categories.map((category, index) => (

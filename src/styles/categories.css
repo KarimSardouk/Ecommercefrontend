@@ -1,3 +1,4 @@
+
 .section-white {
   background: white;
   padding: 70px 0;
@@ -5,16 +6,15 @@
   height: max-content;
   position: relative;
 }
+
 .pslider {
   color: rgb(32, 125, 233);
 }
-.h3 {
-  color: rgb(32, 125, 233);
-}
+
 .home-category {
   /* border-color: rgb(32,125,233);
-    border-width: 2px;
-    border-style: solid; */
+      border-width: 2px;
+      border-style: solid; */
   background: none;
   text-align: center;
   padding: 50px 20px 40px 20px;
@@ -28,6 +28,7 @@
   text-align: center;
   margin: auto;
 }
+
 .border {
   border-color: rgb(32, 125, 233);
   border-width: 2px;
@@ -35,14 +36,17 @@
   width: 90%;
   height: 90%;
 }
+
 .border:hover,
 .catg-img:hover {
   cursor: pointer;
   background-color: rgb(125, 162, 205);
 }
+
 .home-category .h3:hover {
   color: rgb(255, 223, 110);
 }
+
 .home-category .h3 {
   /* margin: 20px 20px 10px 20px !important; */
   font-size: 18px;
@@ -51,8 +55,10 @@
   transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
+  color: rgb(32, 125, 233);
 }
-.yellow-background {
+
+/* .yellow-background {
   position: absolute;
   bottom: -50px;
   left: -50px;
@@ -60,16 +66,19 @@
   height: 50%;
   background-color: rgb(255, 223, 110);
   z-index: -1;
-}
+} */
+
 .section-subtitle {
   white-space: pre-line;
   font-weight: bold;
   font-size: 20px;
 }
+
 .slick-prev:before,
 .slick-next:before {
   color: rgb(32, 125, 233) !important;
 }
+
 .catg-img {
   width: 180px;
   height: 180px;
@@ -83,11 +92,13 @@
 
   margin-top: 10%;
 }
+
 .carousel {
   padding: 5rem;
   height: 30%;
-  width: 100vw;
+  width: 89vw;
 }
+
 .catg-img {
   margin-bottom: 12%;
 }
@@ -96,12 +107,15 @@
   display: flex;
   flex-direction: row;
 }
+
 .ctn {
   flex: 2;
 }
+
 .arr {
   flex: 1;
 }
+
 .arrow {
   width: 23px;
   height: 25px;
@@ -112,4 +126,34 @@
     width: 90%;
     height: 90%;
   }
+}
+
+/* Extra Small Devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* Your styles for extra small devices go here */
+  .carousel {
+    padding: 5rem;
+    height: 30%;
+    width: 90vw;
+  }
+}
+
+/* Small Devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  /* Your styles for small devices go here */
+}
+
+/* Medium Devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  /* Your styles for medium devices go here */
+}
+
+/* Large Devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  /* Your styles for large devices go here */
+}
+
+/* Extra Large Devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+  /* Your styles for extra large devices go here */
 }

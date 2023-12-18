@@ -30,7 +30,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/loginUser",
+        "http://localhost:8000/user/loginUser",
         {
           email,
           password,
@@ -51,7 +51,7 @@ function Login() {
     if (!validateInput()) return;
 
     try {
-      const response = await axios.post("http://localhost:8000/users/addUser", {
+      const response = await axios.post("http://localhost:8000/user/addUser", {
         name,
         lastName,
         email,
@@ -65,6 +65,7 @@ function Login() {
       console.log("error",error)
     }
   };
+  
   useEffect(() => {
     const signUpButton = document.getElementById("signUp");
     const signInButton = document.getElementById("signIn");
