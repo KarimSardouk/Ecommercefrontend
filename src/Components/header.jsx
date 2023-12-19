@@ -75,18 +75,19 @@ const Header = () => {
           <a href="/" className="a">
             <li>Home</li>
           </a>
+          <a href="/category" className="a">
+            <li>Categories</li>
+          </a>
+          <a href="/AllProducts" className="a">
+            <li>All Products</li>
+          </a>
           <a href="#" className="a" onClick={handleNavigate}>
           <li>About</li>
           </a>
           <a href="/contact" className="a">
             <li>Contact</li>
           </a>
-          <a href="/category" className="a">
-            <li>Category</li>
-          </a>
-          <a href="/AllProducts" className="a">
-            <li>AllProducts</li>
-          </a>
+          
           <div className="images12">
             <a href="" className="a" onClick={handleCart}>
               <img src={cartimage} alt="" />

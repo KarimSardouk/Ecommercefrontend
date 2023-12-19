@@ -8,6 +8,7 @@ import dellimage from "../images/dell-inspiron.png";
 import cart123 from "../images/cart123.png";
 import logoutimg from "../images/shutdown.png";
 import Header from "../Components/header";
+import Footer from "./Footer";
 
 const AllProductsTable = () => {
   const [products, setProducts] = useState([]);
@@ -165,6 +166,7 @@ const AllProductsTable = () => {
           ))}
         </tbody>
       </table>
+      <div className="footer"><Footer/></div>
     </div>
   );
 };

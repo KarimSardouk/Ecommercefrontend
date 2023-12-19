@@ -39,15 +39,16 @@ function App() {
               <>
                 <Home />
                 <About />
-                <Brands />
                 <Statistics1 />
+                <Brands />
+                
                 <Footer />
               </>
             }
           />
           <Route path="/Category" element={<Category />} />
           <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Contact" element={<Contact1 />} />
           <Route path="/AllProducts" element={<AllProducts />} />
           <Route
             path="/product/categoryName/:categoryName"
