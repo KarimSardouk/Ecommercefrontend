@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 function Login() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -26,7 +27,6 @@ function Login() {
   }, [navigate]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateInput()) return;
 
     try {
       const response = await axios.post(
@@ -36,11 +36,16 @@ function Login() {
           password,
         }
       );
-      console.log(response.data.data);
+
+      const userId = response.data.data._id; // Move this line inside the try block
+      Cookies.set("userEmail", email, { expires: 7 });
+      Cookies.set("userId", userId, { expires: 50 });
+
+      console.log(response.data.data, "session");
       sessionStorage.setItem("authToken", response.data.data);
       navigate("/");
     } catch (error) {
-      setError(error.response.data.message);
+      console.log("error logging in", error.response.data.message);
     }
   };
 

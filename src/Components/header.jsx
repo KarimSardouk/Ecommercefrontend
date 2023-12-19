@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import cartimage from "../Images/cartimage.png";
 import profileimage from "../Images/profileimage.png";
+import mainimage from "../Images/mmmm-transformed.jpeg";
 import "../styles/header.css";
 import { Helmet } from "react-helmet";
 const Header = () => {
@@ -31,6 +32,10 @@ const Header = () => {
   const handleCart = (e) => {
     e.preventDefault();
     navigate("/Cart");
+  };
+  const handleMainImage = (e) => {
+    e.preventDefault();
+    navigate("/");
   };
   const handleProfile = (e) => {
     e.preventDefault();
@@ -76,21 +81,26 @@ const Header = () => {
       <div className="header">
         <ul className="header-ul">
           <img
-            src="icons8-dashboard-90.png"
-            alt="this is an image"
-            className="adm-dash"
-            onClick={handleAdminDash}
+            className="mainimage"
+            src={mainimage}
+            onClick={handleMainImage}
+            alt=""
           />
-          <a href="/" className="a">
+          <a href="/" className="a" id="homea">
             <li>Home</li>
           </a>
           <a href="#" className="a" onClick={handleNavigate}>
             <li>About</li>
           </a>
-          <a href="/contact" className="a" onClick={handleContact}>
+          <a
+            href="/contact"
+            className="a"
+            id="contacta"
+            onClick={handleContact}
+          >
             <li>Contact</li>
           </a>
-          <a href="/category" className="a">
+          <a href="/category" className="a" id="categorya">
             <li>Category</li>
           </a>
           <a href="/AllProducts" className="a">
@@ -104,13 +114,6 @@ const Header = () => {
               {" "}
               <img className="image-profile" src={profileimage} alt="" />
             </a>
-
-            <img
-              src="icons8-dashboard-100.png"
-              alt="img"
-              className="dashboard-img"
-              onClick={handleDashboard}
-            />
           </div>
         </ul>
       </div>

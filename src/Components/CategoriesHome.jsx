@@ -81,7 +81,7 @@ const CategoriesHome = () => {
   };
 
   return (
-    <div>
+    <div className="big-slider">
       <section className="section-white">
         <div className="yellow-background"></div>
 

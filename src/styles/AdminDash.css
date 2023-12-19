@@ -17,7 +17,7 @@
 #sales-people {
   border: 1px solid #207de9;
   padding: 8px;
-  margin-left: 220px;
+  margin-left: 18%;
   justify-items: flex-end; /* Align content within cells along the inline (row) axis */
   align-items: flex-end; /* Align content within cells along the block (column) axis */
 }
@@ -77,4 +77,13 @@
   width: 100px;
   height: 100px;
   margin-left: -10px;
+}
+@media screen and (min-width: 420px) and(max-width:840px) {
+  .sales-people {
+    border: 1px solid #207de9;
+    padding: 8px;
+    margin-left: 100px;
+    justify-items: flex-end; /* Align content within cells along the inline (row) axis */
+    align-items: flex-end; /* Align content within cells along the block (column) axis */
+  }
 }

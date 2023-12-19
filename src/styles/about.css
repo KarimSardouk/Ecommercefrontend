@@ -68,3 +68,7 @@
     width: 100%;
   }
 }
+@media screen and (min-width: 420px) and (max-width: 840px) {
+  .about {
+  }
+}

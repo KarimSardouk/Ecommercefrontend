@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   background-color: rgb(32, 125, 233);
-  height: fit-content;
+  height: 500px;
   padding: 40px;
   margin-top: -90px;
   z-index: 3;
@@ -74,10 +74,10 @@
 
 .yellow-background {
   position: absolute;
-  top: -385px;
-  right: 50px;
-  width: 750px;
-  height: 75%;
+  top: -319px;
+  right: 230px;
+  width: 610px;
+  height: 58.5%;
   /* Adjust the height as needed */
   background-color: rgb(255, 223, 110);
   border-radius: 99px 0px 0px 99px;
@@ -97,6 +97,16 @@
     font-size: 26px;
     margin-top: 30%;
     border-width: 3px;
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(32, 125, 233);
+    height: 450px !important;
+    width: 500px;
+    padding: 50px;
+    margin: 0px 10px 10px 0px;
+    z-index: 3;
   }
 }
 /* Extra Small Devices (phones, 600px and down) */
@@ -147,5 +157,19 @@
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 840px) {
+  .yellow-background {
+    display: none;
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(32, 125, 233);
+    height: 300px;
+    padding: 40px;
+    margin-top: 0px;
+    z-index: 3;
   }
 }

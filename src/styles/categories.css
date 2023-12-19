@@ -114,6 +114,28 @@
 .arr {
   flex: 1;
 }
+.box-2 {
+  border: 2px solid blue; /* Set the border to 2 pixels solid blue */
+  padding: 10px;
+  width: 404px;
+  height: 100%;
+  margin-top: 70px;
+  /* border-radius: 50%; */
+}
+
+.box-2-image {
+  width: 250px;
+  height: 220px;
+  margin-top: 30px;
+  margin-left: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+.box-2:hover .box-2-image {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+.box-2-image:hover {
+  cursor: pointer;
+}
 
 .arrow {
   width: 23px;
@@ -125,6 +147,14 @@
     width: 90%;
     height: 90%;
   }
+  .section-white {
+    background: white;
+    padding-bottom: 0px;
+    padding-top: 150px;
+    width: 100rem;
+    height: max-content;
+    position: relative;
+  }
 }
 
 /* Extra Small Devices (phones, 600px and down) */
@@ -134,5 +164,11 @@
     padding: 5rem;
     height: 30%;
     width: 90vw;
+  }
+  .section-white {
+    background: white;
+    padding: 70px 0;
+    width: 100rem;
+    height: max-content;
   }
 }

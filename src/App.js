@@ -54,11 +54,11 @@ function App() {
             element={<CategoryProducts />}
           />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/Profile" element={<Profile />} />
           <Route path="/Contact1" element={<Contact1 />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/ApproveProducts" element={<ApproveProducts />} />
           <Route path="/Statistics" element={<Statistics />} />
-          <Route path="/AdminDash" element={<AdminDash />} />
           <Route path="/AllSellers" element={<AllSellers />} />
           <Route path="/AllProductsTable" element={<AllProductsTable />} />
           <Route path="/products/:productId" element={<ProductView />} />
@@ -80,7 +80,7 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <ProtectedRoute adminOnly={true}>
+              <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
             }
@@ -88,7 +88,7 @@ function App() {
           <Route
             path="/AdminDash"
             element={
-              <ProtectedRoute adminOnly={true}>
+              <ProtectedRoute>
                 <AdminDash />
               </ProtectedRoute>
             }

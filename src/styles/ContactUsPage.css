@@ -271,9 +271,6 @@
     margin-right: auto; /* Centered with margin-right: auto */
   }
 
-  .header {
-    display: none;
-  }
   .labelf {
     color: rgb(255, 223, 110);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
