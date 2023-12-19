@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import cartimage from     "../images/cart123.png";
-import profileimage from  "../images/profileimage.png";
-import AdminDash from "../images/icons8-dashboard-90.png";
-import SellerDash from "../images/icons8-dashboard-100.png"
+import cartimage from     "../images/cart123 (1).png";
+import profileimage from  "../images/profileimage (1).png";
+  // import AdminDash from "../images/icons8-dashboard-90.png";
+  // import SellerDash from "../images/icons8-dashboard-100.png"
 import "../App.css";
 import "../styles/header.css";
 import { Helmet } from "react-helmet";
@@ -83,18 +83,19 @@ const Header = () => {
           <a href="/" className="a">
             <li>Home</li>
           </a>
+          <a href="/category" className="a">
+            <li>Categories</li>
+          </a>
+          <a href="/AllProducts" className="a">
+            <li>All Products</li>
+          </a>
           <a href="#" className="a" onClick={handleNavigate}>
           <li>About</li>
           </a>
           <a href="/contact" className="a">
             <li>Contact</li>
           </a>
-          <a href="/category" className="a">
-            <li>Category</li>
-          </a>
-          <a href="/AllProducts" className="a">
-            <li>AllProducts</li>
-          </a>
+          
           <div className="images12">
             <a href="" className="a" onClick={handleCart}>
               <img src={cartimage} alt="" />
@@ -112,6 +113,7 @@ const Header = () => {
   <a href="#about">About</a>
   <a href="/contact">Contact</a>
   <a href="/category">Category</a>
+  <a href="/AllProducts" onClick={handleAllProducts}>All Products</a>
   <div className="images12">
             <a href="" className="a" onClick={handleCart}>
               <img src={cartimage} alt=""  className="cart"/>

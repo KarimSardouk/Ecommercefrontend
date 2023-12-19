@@ -5,12 +5,18 @@
     padding-top: 15px;
     padding-bottom: 15px;
     display: flex;
+    
 }
 
 .about_content {
     width: 50%;
+    
     background-color: #FFDF6E;
     color: #207DE9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .aTitle {
@@ -39,11 +45,31 @@
 
 @media only screen and (max-width: 490px) {
     .about {
-        width: 125%;
+        width: 100%;
         height: fit-content;
         padding-top: 15px;
         padding-bottom: 15px;
         display: flex;
-    }
-
+        flex-direction: column; /* Stack the divs vertically on smaller screens */
+      }
+      
+      .about_content {
+        width: 100%; /* Make the content div take full width on smaller screens */
+        background-color: #ffdf6e;
+        color: #207de9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      
+      .video {
+        background-color: #f0f0f0;
+        width: 100%;
+      }
+      
+     
+      
+       
+      
 }

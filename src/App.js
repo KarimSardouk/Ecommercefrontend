@@ -4,7 +4,6 @@ import Login from "./Components/Login";
 import Home from "./Components/Home";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import About from "./Components/About";
-import ContactUsPage from "./Components/ContactUsPage";
 import Category from "./Components/Category";
 import AllProducts from "./Components/AllProducts";
 import Dashboard from "./Components/Dashboard";
@@ -25,7 +24,6 @@ import Footer from "./Components/Footer";
 import CategoryView from "./Components/CategoryView";
 import CategoryProducts from "./Components/CategoryProducts";
 import CategoryOnPress from "./Components/CategoryOnPress";
-
 function App() {
   return (
     <div>
@@ -38,15 +36,15 @@ function App() {
               <>
                 <Home />
                 <About />
-                <Brands />
                 <Statistics1 />
+                <Brands />
+
                 <Footer />
               </>
             }
           />
           <Route path="/Category" element={<Category />} />
           <Route path="/About" element={<About />} />
-          <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/AllProducts" element={<AllProducts />} />
           <Route
             path="/product/categoryName/:categoryName"
@@ -73,26 +71,29 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute >
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/AdminDash" element={
-          <ProtectedRoute >
-            <AdminDash />
-          </ProtectedRoute>
-        }/>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute adminOnly={false}>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/AdminDash"
+            element={
+              <ProtectedRoute>
+                <AdminDash />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute adminOnly={false}>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/Error" element={<Error />} />
         </Routes>
       </Router>

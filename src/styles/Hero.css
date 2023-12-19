@@ -37,12 +37,15 @@
     color: rgb(255, 223, 110);
     border-radius: 30px 30px;
     background-color: rgb(32, 125, 233);
-    border-color: rgb(255, 223, 110);
+    border-color: rgb(255, 223, 110) !important;
     width: 200px;
     height: 50px;
     font-size: 26px;
     margin-bottom: 100%;
     border-width: 3px;
+    border: 2px solid;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; 
+
 
 }
 
@@ -125,22 +128,34 @@
     }
   }
   
-  /* Small Devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 601px) and (max-width: 768px) {
-    /* Your styles for small devices go here */
-  }
-  
-  /* Medium Devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 769px) and (max-width: 992px) {
-    /* Your styles for medium devices go here */
-  }
-  
-  /* Large Devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 993px) and (max-width: 1200px) {
-    /* Your styles for large devices go here */
-  }
-  
-  /* Extra Large Devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1201px) {
-    /* Your styles for extra large devices go here */
-  }
+  @media (max-width: 1200px) {
+    .yellow-background {
+        right: 10%;
+    }
+}
+
+@media (max-width: 900px) {
+    .yellow-background {
+        right: 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    .yellow-background {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .yellow-background {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-section {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+}

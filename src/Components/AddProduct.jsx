@@ -4,7 +4,7 @@ import "../styles/AddProduct.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import cartimage from "../images/cartimage.png";
+import cartimage from "../images/cart123 (1).png";
 import Header from "./Header";
 import logoutimg from "../images/shutdown.png";
 

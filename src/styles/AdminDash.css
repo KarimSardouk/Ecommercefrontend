@@ -1,4 +1,3 @@
-
 #sales-people {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -81,4 +80,15 @@
 }
 .overflow{
   overflow-x: auto;
+}
+.delete{
+  background-color: #207de9;
+  color: white;
+  border: none;
+  width:  100px;
+  height: 30px;
+  border-radius: 15px;
+}
+.delete:hover{
+  background-color: #555;
 }

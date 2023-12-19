@@ -56,8 +56,58 @@ const Cart = () => {
       );
 
       setCartItems(uniqueItems);
+
+      // Save cart items to local storage
+      localStorage.setItem("cartItems", JSON.stringify(uniqueItems));
     } catch (error) {
       console.error("Error fetching cart items:", error);
+    }
+  };
+
+  const handleCheckout = async () => {
+    try {
+      const savedCartItems =
+        JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      // Create an array to hold the formatted cart items for checkout
+      const formattedCartItems = savedCartItems.map((item) => ({
+        user_id: item.user_id,
+        products_id: item.products_id,
+        quantity_to_purchase: item.quantity_to_purchase,
+        price: item.price,
+        product_name: item.product_name,
+      }));
+      console.log("Formatted Cart Items:", formattedCartItems);
+      formattedCartItems.forEach((item, index) => {
+        console.log(`Item ${index + 1}:`, item);
+      });
+
+      // Send the formatted cart items to the server for checkout
+      for (let i = 0; i < formattedCartItems.length; i++) {
+        const item = formattedCartItems[i];
+        const response = await axios.post(
+          "http://localhost:8000/checkout/add",
+          {
+            user_id: item.user_id,
+            products_id: item.product_id,
+            quantity_to_purchase: item.quantity_to_purchase,
+            price: item.price,
+            product_name: item.product_name,
+          }
+        );
+
+        if (response.data.success) {
+          const checkoutData = response.data;
+          console.log("Checkout Information:", checkoutData);
+          // Handle success: show a confirmation or redirect to a success page
+        } else {
+          console.error("Failed to add items to checkout.", response.data);
+          // Handle failure: display an error message or retry logic
+        }
+      }
+    } catch (error) {
+      console.error("Error adding items to checkout:", error);
+      // Handle error: display an error message or retry logic
     }
   };
 
@@ -118,7 +168,9 @@ const Cart = () => {
                 </div>
               </td>
               <td>
-                <button className="checkout">Checkout</button>
+                <button className="checkout" onClick={handleCheckout}>
+                  Checkout
+                </button>
               </td>
             </tr>
           </tfoot>

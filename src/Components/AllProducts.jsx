@@ -2,10 +2,9 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/productsAll.css";
-import cartimage from "../images/cartimage.png";
-import profileimage from "../images/profileimage.png";
+import profileimage from "../images/profileimage (1).png";
 import dellimage from "../images/dell-inspiron.png";
-import cart123 from "../images/cart123.png";
+import cart123 from "../images/cart123 (1).png";
 // import header from "./Components/header";
 
 const AllProducts = () => {

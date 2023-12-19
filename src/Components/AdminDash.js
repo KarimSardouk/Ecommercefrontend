@@ -33,7 +33,7 @@ const AdminDash = () => {
         }
       })
       .catch((error) => {
-        console.error("Error deleting product:", error);
+        console.error("Error deleting user:", error);
       });
   };
 
@@ -121,7 +121,7 @@ const AdminDash = () => {
               <td className="t-d-8">{user.phoneNumber}</td>
               <td className="t-d-9">{user.address}</td>
               <td className="t-d-fourth">
-              <button onClick={() => handleDeleteUser(user._id)}
+              <button className="delete" onClick={() => handleDeleteUser(user._id)}
                 >Delete User</button>
               </td>
             </tr>
