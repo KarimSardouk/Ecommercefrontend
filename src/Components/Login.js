@@ -24,7 +24,7 @@ function Login() {
       navigate("/");
     }
   }, [navigate]);
- const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateInput()) return;
 
@@ -39,8 +39,8 @@ function Login() {
       console.log(response.data.data, "session");
       sessionStorage.setItem("authToken", response.data.data);
       navigate("/");
-      } catch (error) {
-      console.log("error logging in",error.response.data.message);
+    } catch (error) {
+      console.log("error logging in", error.response.data.message);
     }
   };
 
@@ -60,10 +60,10 @@ function Login() {
       console.log(response.data);
       navigate("/");
     } catch (error) {
-      console.log("error",error)
+      console.log("error", error);
     }
   };
-  
+
   useEffect(() => {
     const signUpButton = document.getElementById("signUp");
     const signInButton = document.getElementById("signIn");
@@ -201,4 +201,4 @@ function Login() {
   );
 }
 
-export default Login
+export default Login;

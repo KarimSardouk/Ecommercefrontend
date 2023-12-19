@@ -8,8 +8,6 @@ import AdminDash from "../images/icons8-dashboard-90.png";
 import SellerDash from "../images/icons8-dashboard-100.png"
 import "../App.css";
 import "../styles/header.css";
-
-
 import { Helmet } from "react-helmet";
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -55,6 +53,15 @@ const Header = () => {
     e.preventDefault();
     navigate("/AdminDash");
   }
+  function myFunction() {
+    const x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  
   return (
     <div>
       <Helmet>
@@ -69,7 +76,8 @@ const Header = () => {
           rel="stylesheet"
         />
       </Helmet>
-      <div className="header">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      {/* <div className="header">
         <ul className="header-ul">
         <img src={AdminDash} alt='this is an image' className="adm-dash" onClick={handleAdminDash}/>
           <a href="/" className="a">
@@ -98,7 +106,24 @@ const Header = () => {
             <img src={SellerDash} alt='img' className="dashboard-img" onClick={handleDashboard}/>
           </div>
         </ul>
-      </div>
+      </div> */}
+<div className="topnav" id="myTopnav">
+  <a href="/" className="active">Home</a>
+  <a href="#about">About</a>
+  <a href="/contact">Contact</a>
+  <a href="/category">Category</a>
+  <div className="images12">
+            <a href="" className="a" onClick={handleCart}>
+              <img src={cartimage} alt=""  className="cart"/>
+            </a>
+            <a href="" className="a" onClick={handleProfile}>
+              <img className="image-profile" src={profileimage} alt="" />
+            </a>
+          </div>
+  <a href="javascript:void(0);" className="icon" onClick={myFunction}>
+    <i className="fa fa-bars"></i>
+  </a>
+</div>
     </div>
   );
 };
