@@ -66,7 +66,7 @@ const AdminDash = () => {
     navigate("/Statistics");
   };
   const handleLogout = () => {
-    localStorage.removeItem("user._id");
+    sessionStorage.removeItem("authToken");
     navigate("/");
   };
   const AllProducts = async (e) => {

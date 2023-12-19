@@ -36,11 +36,11 @@ function Login() {
           password,
         }
       );
-      console.log(response.data);
-      sessionStorage.setItem("authToken", response.data.data.token);
+      console.log(response.data.data, "session");
+      sessionStorage.setItem("authToken", response.data.data);
       navigate("/");
       } catch (error) {
-      setError(error.response.data.message);
+      console.log("error logging in",error.response.data.message);
     }
   };
 
