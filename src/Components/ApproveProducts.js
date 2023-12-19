@@ -200,8 +200,7 @@ const ApproveProducts = () => {
       <div>
         <ToastContainer />
         <input
-        
-          id="myInput"
+          id="myInput2"
           placeholder="Filter names"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
@@ -211,7 +210,7 @@ const ApproveProducts = () => {
 
         <div className="box-container-1">
           {filteredProducts.map((product) => (
-            <div key={product._id} className="box-1">
+            <div key={product._id} className="box-2">
               <img
                 className="box-1-image"
                 src={product.product_image}

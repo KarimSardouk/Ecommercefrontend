@@ -1,106 +1,151 @@
 .hero-section {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(32, 125, 233);
-    height: fit-content;
-    padding: 40px;
-    margin-top: -90px;
-    z-index: 3;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(32, 125, 233);
+  height: fit-content;
+  padding: 40px;
+  margin-top: -90px;
+  z-index: 3;
 }
 
 .logodiv {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 .logoimg {
-    flex: 1;
-    width: 80%;
-    height: 40%;
-    margin-top: 25%;
-
+  flex: 1;
+  width: 80%;
+  height: 40%;
+  margin-top: 25%;
 }
 
 .yellowtext {
-    flex: 1;
-    color: rgb(255, 223, 110);
-    font-size: 30px;
-    margin-bottom: 5%;
+  flex: 1;
+  color: rgb(255, 223, 110);
+  font-size: 30px;
+  margin-bottom: 5%;
 }
 
 .shopnow {
-
-    color: rgb(255, 223, 110);
-    border-radius: 30px 30px;
-    background-color: rgb(32, 125, 233);
-    border-color: rgb(255, 223, 110);
-    width: 200px;
-    height: 50px;
-    font-size: 26px;
-    margin-bottom: 100%;
-    border-width: 3px;
-
+  color: rgb(255, 223, 110);
+  border-radius: 30px 30px;
+  background-color: rgb(32, 125, 233);
+  border-color: rgb(255, 223, 110) !important;
+  width: 200px;
+  height: 50px;
+  font-size: 26px;
+  margin-bottom: 100%;
+  border-width: 3px;
+  border: 2px solid;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 .shopnow:hover {
-    cursor: pointer;
-    background-color: rgb(255, 223, 110);
-    color: rgb(32, 125, 233);
-
+  cursor: pointer;
+  background-color: rgb(255, 223, 110);
+  color: rgb(32, 125, 233);
 }
 
 .section3 {
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero2 {
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    /* Add position relative to the parent */
-
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Add position relative to the parent */
 }
 
 .hdiv2 {
-    width: 90%;
-    height: 80%;
-    flex: 1;
+  width: 90%;
+  height: 80%;
+  z-index: 1;
 }
 
 .yellow-background {
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 100%;
-    height: 50%;
-    /* Adjust the height as needed */
-    background-color: rgb(255, 223, 110);
-    z-index: -1;
-    /* Send it to the back */
+  position: absolute;
+  top: -385px;
+  right: 50px;
+  width: 750px;
+  height: 75%;
+  /* Adjust the height as needed */
+  background-color: rgb(255, 223, 110);
+  border-radius: 99px 0px 0px 99px;
+  /* z-index:; */
+  /* Send it to the back */
 }
 
 @media (max-width: 500px) {
-    .hero2 {
-        display: none;
-        /* Hide the second div under 500px */
-    }
+  .hero2 {
+    display: none;
+    /* Hide the second div under 500px */
+  }
 
-    .shopnow {
+  .shopnow {
+    width: 200px;
+    height: 50px;
+    font-size: 26px;
+    margin-top: 30%;
+    border-width: 3px;
+  }
+}
+/* Extra Small Devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* Your styles for extra small devices go here */
+  .hdiv2 {
+    width: 90%;
+    height: 70%;
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(32, 125, 233);
+    height: fit-content;
+    width: 500px;
+    padding: 50px;
+    margin: 0px 10px 10px 0px;
+    z-index: 3;
+  }
+}
 
+@media (max-width: 1200px) {
+  .yellow-background {
+    right: 10%;
+  }
+}
 
-        width: 200px;
-        height: 50px;
-        font-size: 26px;
-        margin-top: 30%;
-        border-width: 3px;
+@media (max-width: 900px) {
+  .yellow-background {
+    right: 5%;
+  }
+}
 
-    }
+@media (max-width: 600px) {
+  .yellow-background {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .yellow-background {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 }

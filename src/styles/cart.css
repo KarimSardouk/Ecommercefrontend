@@ -1,0 +1,43 @@
+.mainboxcart {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80rem;
+}
+
+.cartable {
+  border: 2px solid;
+  border-color: rgb(32, 125, 233);
+  background-color: white;
+  width: 600px;
+  border-collapse: collapse;
+}
+.cartable th,
+.cartable td {
+  border-bottom: 2px solid rgb(32, 125, 233);
+  padding: 8px;
+}
+
+.emptydiv {
+  display: flex;
+  flex-direction: space-between;
+  justify-content: center;
+}
+.totalp {
+  flex: 1;
+  color: rgb(32, 125, 233);
+}
+.blues {
+  color: rgb(32, 125, 233);
+}
+.checkout {
+  flex: 1;
+  border-radius: 80px 80px;
+  color: rgb(32, 125, 233);
+  border-color: rgb(32, 125, 233);
+  background-color: white;
+  height: 30px;
+  width: 130px;
+  font-size: 16px;
+}

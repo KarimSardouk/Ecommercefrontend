@@ -199,3 +199,29 @@ button:hover {
     font-size: 16px;
   }
 }
+@media (max-width: 400px) {
+  .box-123 {
+    flex-direction: column; /* Change the direction to column */
+    align-items: center; /* Align items to the center */
+  }
+
+  .box-12-image {
+    width: 100%;
+    max-width: 100%; /* Adjust the width to take full width */
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add margin at the bottom for spacing */
+  }
+
+  .incrementing-box {
+    width: 80%; /* Make it take full width */
+  }
+
+  .button-container {
+    flex-direction: column; /* Change the direction to column */
+    align-items: center; /* Align buttons to the center */
+  }
+
+  .button-container button {
+    margin-top: 10px; /* Add some spacing between buttons */
+  }
+}

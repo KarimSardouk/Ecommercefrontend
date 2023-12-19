@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -19,20 +19,25 @@ function Login() {
 
     return true;
   };
-
+  useEffect(() => {
+    if (sessionStorage.getItem("authToken")) {
+      navigate("/");
+    }
+  }, [navigate]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateInput()) return;
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/loginUser",
+        "http://localhost:8000/user/loginUser",
         {
           email,
           password,
         }
       );
-      console.log(response.data);
+      console.log(response.data.data);
+      sessionStorage.setItem("authToken", response.data.data);
       navigate("/");
     } catch (error) {
       setError(error.response.data.message);
@@ -44,7 +49,7 @@ function Login() {
     if (!validateInput()) return;
 
     try {
-      const response = await axios.post("http://localhost:8000/users/addUser", {
+      const response = await axios.post("http://localhost:8000/user/addUser", {
         name,
         lastName,
         email,
@@ -55,9 +60,10 @@ function Login() {
       console.log(response.data);
       navigate("/");
     } catch (error) {
-      setError(error.response.data.message);
+      console.log("error", error);
     }
   };
+
   useEffect(() => {
     const signUpButton = document.getElementById("signUp");
     const signInButton = document.getElementById("signIn");
@@ -83,7 +89,7 @@ function Login() {
   return (
     <div className="root">
       <div className="body">
-          <div className="container" id="container">
+        <div className="container" id="container">
           <div className="form-container sign-up-container">
             {error && <p className="error-message">{error}</p>}
             <form onSubmit={handleRegister} className="form1" action="#">
@@ -92,18 +98,18 @@ function Login() {
               <input
                 className="input1"
                 required
-				value={name}
+                value={name}
                 type="text"
                 placeholder="Name"
-				onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 className="input2"
                 required
-				value={lastName}
+                value={lastName}
                 type="text"
                 placeholder="Last Name"
-				onChange={(e) => setLastName(e.target.value)}
+                onChange={(e) => setLastName(e.target.value)}
               />
               <input
                 className="input3"
@@ -121,7 +127,7 @@ function Login() {
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-               <input
+              <input
                 className="input5"
                 required
                 value={phoneNumber}

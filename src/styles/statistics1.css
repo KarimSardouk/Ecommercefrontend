@@ -1,15 +1,30 @@
 .statistics {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 90%;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+  margin: 8%;
 }
 
 .stClient,
 .stOrders,
 .stArea {
-    color: #207DE9;
-    font-size: 40px;
+  color: #207de9;
+  font-size: 40px;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .statistics {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    margin: 8%;
+  }
+  .stClient,
+  .stOrders,
+  .stArea {
+    color: #207de9;
+    font-size: 20px;
     font-weight: bold;
+  }
 }

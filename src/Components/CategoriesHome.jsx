@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import image1 from "../Images/right-arrow.png";
+import "../styles/CategoriesHome.css";
 
 const CategoriesHome = () => {
-  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchCategories = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8000/product/getAll/"
-        );
-        setProducts(response.data);
+        const response = await axios.get("http://localhost:8000/categories/");
+        setCategories(response.data);
       } catch (error) {
-        console.error("Error fetching Products:", error);
-        setError("Error fetching Products. Please try again later.");
+        console.error("Error fetching Categories:", error);
+        setError("Error fetching Categories. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProducts();
+    fetchCategories();
   }, []);
 
-  // Display first 4, skip 4, and then display the next 4
-  const displayedProducts = [...products.slice(0, 4), ...products.slice(8, 12)];
+  const handleCategoryClick = (categoryName) => {
+    navigate(`/product/product/categoryName/${categoryName}`);
+  };
 
   var settings = {
     dots: true,
@@ -87,21 +87,21 @@ const CategoriesHome = () => {
 
         <div className="carousel">
           <Slider {...settings}>
-            {displayedProducts.map((product) => (
+            {categories.map((category, index) => (
               <div
-                key={product._id}
+                key={category._id}
                 className="home-category"
-                onClick={() => navigate(`/products/${product._id}`)} // Add the click event
+                onClick={() => handleCategoryClick(category.categoryName)}
               >
                 <div className="border">
                   <img
-                    src={product.product_image}
+                    src={category.category_image}
                     className="catg-img"
                     alt="pic"
                   />
                   <div className="desc">
                     <div className="ctn">
-                      <h3 className="h3">{product.product_name}</h3>
+                      <h3 className="h3">{category.categoryName}</h3>
                     </div>
                     <div className="arr">
                       <img src={image1} className="arrow" />

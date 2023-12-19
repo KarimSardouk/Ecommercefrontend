@@ -66,6 +66,8 @@ function App() {
           <Route path="/products" element={<AllProducts />} />
           <Route path="/AddProduct" element={<AddProduct />} />
           <Route path="/CategoryView" element={<CategoryView />} />
+          <Route path="/Cart" element={<Cart />} />
+
           <Route
             path="/CategoryProducts/:category_id"
             element={<CategoryProducts />}
@@ -80,6 +82,22 @@ function App() {
             element={
               <ProtectedRoute adminOnly={true}>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/AdminDash"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <AdminDash />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute adminOnly={false}>
+                <Home />
               </ProtectedRoute>
             }
           />

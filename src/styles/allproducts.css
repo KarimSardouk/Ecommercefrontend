@@ -62,7 +62,7 @@
   border: 2px solid blue; /* Set the border to 2 pixels solid blue */
   padding: 10px;
   width: 404px;
-  height: 523px;
+  height: 100%;
   margin-top: 70px;
 }
 
@@ -223,7 +223,7 @@
   .box-1 {
     border: 2px solid blue; /* Set the border to 2 pixels solid blue */
     padding: 10px;
-    width: 404px;
+    width: 344px;
     height: 523px;
     margin-top: 70px;
   }
@@ -292,7 +292,7 @@
     background: #fff;
     justify-content: center;
     justify-items: center;
-    margin-left: 40px;
+    margin-left: 20px;
     padding: 10px;
     width: 80px;
     transition: background-color 0.5s ease;
@@ -317,8 +317,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
-    margin-left: 60px;
-    margin-right: 10px;
+    margin-left: -95px;
+    margin-right: 20px;
   }
   .biggest-box {
     margin-left: 100px;
