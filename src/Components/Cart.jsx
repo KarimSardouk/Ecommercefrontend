@@ -55,7 +55,7 @@ const Cart = () => {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/carts/get/${userId}`
+        "http://localhost:8000/carts/get/${userId}"
       );
       const fetchedCartItems = response.data;
 

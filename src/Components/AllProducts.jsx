@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "../styles/allproducts.css";
 import cartimage from "../Images/cartimage.png";
