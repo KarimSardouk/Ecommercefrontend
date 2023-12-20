@@ -8,7 +8,7 @@ import profileimage from "../Images/profileimage.png";
 import dellimage from "../Images/dell-inspiron.png";
 import cart123 from "../Images/cart123.png";
 import Header from "./header";
-
+import Footer from './Footer';
 const AllProducts = (props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -140,6 +140,7 @@ const AllProducts = (props) => {
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
