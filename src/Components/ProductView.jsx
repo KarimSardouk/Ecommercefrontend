@@ -21,6 +21,24 @@ const ProductView = (props) => {
     setCount(count + 1);
     return count + 1;
   };
+  const addToCart = async (productId, price, product_name, product_image) => {
+    try {
+      const updatedCount = handleIncrements(count);
+      const response = await axios.post("https://computop.onrender.com/carts/add", {
+        user_id: userId,
+        products_id: productId,
+        product_image: product_image,
+        quantity_to_purchase: updatedCount,
+        price: price,
+        product_name: product_name,
+      });
+      console.log("Product added to cart:", response.data);
+      window.alert("Product add successfully");
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+      window.alert("Product don't add successfully");
+    }
+  };
   const handleDetailedDescription = () => {
     setShowFullDescription(false);
   };
@@ -57,25 +75,6 @@ const ProductView = (props) => {
       setQuantity(quantity - 1);
       // Increment remaining stock
       setRemainingStock((prevStock) => prevStock + 1);
-    }
-  };
-  const addToCart = async () => {
-    try {
-      const updatedCount = handleIncrement();
-
-      const response = await axios.post("https://computop.onrender.com/carts/add", {
-        user_id: userId,
-        products_id: productId,
-        product_image: product.data.product_image,
-        quantity_to_purchase: updatedCount,
-        price: product.data.price,
-        product_name: product.data.product_name,
-      });
-      console.log("Product added to cart:", response.data);
-      window.alert("Product added successfully");
-    } catch (error) {
-      console.log("Error adding product to cart:", error);
-      window.alert("Product not added successfully");
     }
   };
 
