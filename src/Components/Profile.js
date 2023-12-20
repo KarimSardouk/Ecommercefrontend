@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Profile.css";
 import axios from "axios";
+import logoutimg from "../Images/shutdown.png";
 const Profile = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -28,6 +30,11 @@ const Profile = () => {
       console.log("error fetching users", error);
     }
   };
+  const handleLogout = () => {
+    sessionStorage.removeItem("authToken");
+    navigate("/");
+  };
+  const navigate = useNavigate();
   return (
     <div>
       <h1 className="h12">Hi There Karim!</h1>
@@ -53,6 +60,9 @@ const Profile = () => {
                 <p>Created At: 19/12/2023</p>
                 <p>Status : Active</p>
                 <p>Items purchased : None</p>
+                <button className="logout-image" onClick={handleLogout}>
+                  Logout
+                </button>
               </p>
             </div>
           </div>

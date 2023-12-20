@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import cart123 from "../Images/cart123.png";
 import "../styles/singleproduct.css";
 
-const ProductView = () => {
+const ProductView = (props) => {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1); // Initial quantity is set to 1
   const [remainingStock, setRemainingStock] = useState(0);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const { productId } = useParams();
+  const location = useLocation();
+  const userId = location.state?.userId;
 
   const handleFullDescription = () => {
     setShowFullDescription(true);
@@ -53,6 +55,25 @@ const ProductView = () => {
       setRemainingStock((prevStock) => prevStock + 1);
     }
   };
+  const addToCart = async () => {
+    try {
+      const updatedCount = handleIncrement();
+
+      const response = await axios.post("http://localhost:8000/carts/add", {
+        user_id: userId,
+        products_id: productId,
+        product_image: product.data.product_image,
+        quantity_to_purchase: updatedCount,
+        price: product.data.price,
+        product_name: product.data.product_name,
+      });
+      console.log("Product added to cart:", response.data);
+      window.alert("Product added successfully");
+    } catch (error) {
+      console.log("Error adding product to cart:", error);
+      window.alert("Product not added successfully");
+    }
+  };
 
   return (
     <div className="all-box-12">
@@ -87,7 +108,7 @@ const ProductView = () => {
                   <input type="text" value={quantity} readOnly />
                   <button onClick={handleIncrement}>+</button>
                   <div className="button-add-12">
-                    <button>Add to Cart</button>
+                    <button onClick={addToCart}>Add to Cart</button>
                   </div>
                 </div>
                 <h2>Total Price: ${product.data.price * quantity}</h2>

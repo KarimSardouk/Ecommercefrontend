@@ -7,8 +7,32 @@ const Cart = () => {
   const userId = Cookies.get("userId");
   const [cartItems, setCartItems] = useState([]);
   const [productsQuantity, setProductsQuantity] = useState({});
-  const handleDeleteProduct = (product_id) => {
-    fetch(`http://localhost:8000/carts/delete/${product_id}`, {
+  const [showPopup, setShowPopup] = useState(false);
+  const [showCart, setShowCart] = useState(true);
+
+  const clearUserCart = async () => {
+    try {
+      const response = await axios.delete(
+        "http://localhost:8000/carts/deleteByUserId/${userId}"
+      );
+
+      if (response.data.success) {
+        console.log("User cart data deleted successfully!");
+      } else {
+        console.error("Failed to delete user cart data.");
+      }
+    } catch (error) {
+      console.error("Error deleting user cart data:", error);
+    }
+  };
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+    setShowCart(!showCart);
+    clearUserCart();
+  };
+  const handleDeleteProduct = (_id) => {
+    fetch("http://localhost:8000/carts/delete/${_id}", {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -24,7 +48,6 @@ const Cart = () => {
         console.error("Error deleting product:", error);
       });
   };
-
   useEffect(() => {
     fetchCartItems();
   }, []);
@@ -32,7 +55,7 @@ const Cart = () => {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/carts/get/${userId}`
+        "http://localhost:8000/carts/get/${userId}"
       );
       const fetchedCartItems = response.data;
 
@@ -69,7 +92,6 @@ const Cart = () => {
       const savedCartItems =
         JSON.parse(localStorage.getItem("cartItems")) || [];
 
-      // Create an array to hold the formatted cart items for checkout
       const formattedCartItems = savedCartItems.map((item) => ({
         user_id: item.user_id,
         products_id: item.products_id,
@@ -77,19 +99,14 @@ const Cart = () => {
         price: item.price,
         product_name: item.product_name,
       }));
-      console.log("Formatted Cart Items:", formattedCartItems);
-      formattedCartItems.forEach((item, index) => {
-        console.log(`Item ${index + 1}:`, item);
-      });
 
-      // Send the formatted cart items to the server for checkout
       for (let i = 0; i < formattedCartItems.length; i++) {
         const item = formattedCartItems[i];
         const response = await axios.post(
-          "http://localhost:8000/checkout/add",
+          "http://localhost:8000/checkout/addCheckout",
           {
             user_id: item.user_id,
-            products_id: item.product_id,
+            products_id: item.products_id,
             quantity_to_purchase: item.quantity_to_purchase,
             price: item.price,
             product_name: item.product_name,
@@ -99,15 +116,16 @@ const Cart = () => {
         if (response.data.success) {
           const checkoutData = response.data;
           console.log("Checkout Information:", checkoutData);
-          // Handle success: show a confirmation or redirect to a success page
         } else {
           console.error("Failed to add items to checkout.", response.data);
-          // Handle failure: display an error message or retry logic
+          // Handle failure case if needed
         }
       }
+
+      // After successful checkout for all items, toggle the popup
+      togglePopup();
     } catch (error) {
       console.error("Error adding items to checkout:", error);
-      // Handle error: display an error message or retry logic
     }
   };
 
@@ -117,65 +135,92 @@ const Cart = () => {
 
   return (
     <div className="mainboxcart">
-      <h1>
-        <span className="blues">Your Shopping Cart</span>
-      </h1>
-      <div id="cart-items">
-        <table className="cartable">
-          <thead>
-            <tr>
-              <th className="blues">Product Name</th>
-              <th className="blues">Quantity</th>
-              <th className="blues">Price</th>
-              <th className="blues">Remove</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item, index) => (
-              <tr key={index}>
-                <td className="blues">{item.product_name}</td>
-                <td className="blues">{productsQuantity[item.products_id]}</td>
-                <td className="blues">
-                  $
-                  {calculateTotalPrice(
-                    productsQuantity[item.products_id],
-                    item.price
-                  )}
-                </td>
-                <td className="blues">
-                  <button
-                    className="delete"
-                    onClick={() => handleDeleteProduct(item._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>
-                <div className="totalp">
-                  Total Price: $
-                  {cartItems.reduce((total, item) => {
-                    const itemQuantity =
-                      productsQuantity[item.products_id] || 0;
-                    return (
-                      total + calculateTotalPrice(itemQuantity, item.price)
-                    );
-                  }, 0)}
-                </div>
-              </td>
-              <td>
-                <button className="checkout" onClick={handleCheckout}>
-                  Checkout
-                </button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+      {/* Popup/modal */}
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-inner">
+            <h2>Checkout</h2>
+            <p>
+              Fantastic! Your order is confirmed. 🎉 If you have any questions
+              or need assistance, feel free to reach out. Have a good day
+            </p>
+            {/* Close button */}
+            <button onClick={togglePopup}>Close</button>
+          </div>
+        </div>
+      )}
+      {showCart && (
+        <div>
+          <h1>
+            <span className="blues">Your Shopping Cart</span>
+          </h1>
+          <div id="cart-items">
+            <table className="cartable">
+              <thead>
+                <tr>
+                  <th className="blues">Product Name</th>
+                  <th className="blues">Quantity</th>
+                  <th className="blues">Unit Price</th>
+                  <th className="blues">Price</th>
+                  <th className="blues">Remove</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item, index) => (
+                  <tr key={index}>
+                    <td className="blues">
+                      <div className="CartDiv">
+                        <img className="imgCart" src={item.product_image} />
+                        <p className="nameCart">{item.product_name}</p>
+                      </div>
+                    </td>
+                    <td className="blues">
+                      {productsQuantity[item.products_id]}
+                    </td>
+                    <td className="blues">${item.price}</td>
+                    <td className="blues">
+                      $
+                      {calculateTotalPrice(
+                        productsQuantity[item.products_id],
+                        item.price
+                      )}
+                    </td>
+                    <td className="blues">
+                      <button
+                        className="delete"
+                        onClick={() => handleDeleteProduct(item._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>
+                    <div className="totalp">
+                      Total Price: $
+                      {cartItems.reduce((total, item) => {
+                        const itemQuantity =
+                          productsQuantity[item.products_id] || 0;
+                        return (
+                          total + calculateTotalPrice(itemQuantity, item.price)
+                        );
+                      }, 0)}
+                    </div>
+                  </td>
+                  <td>
+                    <button className="checkout" onClick={handleCheckout}>
+                      Checkout
+                    </button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

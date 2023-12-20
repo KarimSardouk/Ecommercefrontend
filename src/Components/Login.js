@@ -43,7 +43,7 @@ function Login() {
 
       console.log(response.data.data, "session");
       sessionStorage.setItem("authToken", response.data.data);
-      navigate("/");
+      navigate("/", { state: { userId } });
     } catch (error) {
       console.log("error logging in", error.response.data.message);
     }
