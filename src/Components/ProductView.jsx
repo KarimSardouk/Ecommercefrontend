@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import cart123 from "../Images/cart123.png";
 import "../styles/singleproduct.css";
+import Cookies from "js-cookie";
 
 const ProductView = () => {
   const [product, setProduct] = useState(null);
@@ -10,11 +11,34 @@ const ProductView = () => {
   const [remainingStock, setRemainingStock] = useState(0);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const { productId } = useParams();
+  const userId = Cookies.get("userId");
+  const [count, setCount] = useState(0);
 
   const handleFullDescription = () => {
     setShowFullDescription(true);
   };
-
+  const handleIncrements = () => {
+    setCount(count + 1);
+    return count + 1;
+  };
+  const addToCart = async (productId, price, product_name, product_image) => {
+    try {
+      const updatedCount = handleIncrements(count);
+      const response = await axios.post("http://localhost:8000/carts/add", {
+        user_id: userId,
+        products_id: productId,
+        product_image: product_image,
+        quantity_to_purchase: updatedCount,
+        price: price,
+        product_name: product_name,
+      });
+      console.log("Product added to cart:", response.data);
+      window.alert("Product add successfully");
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+      window.alert("Product don't add successfully");
+    }
+  };
   const handleDetailedDescription = () => {
     setShowFullDescription(false);
   };
@@ -87,7 +111,18 @@ const ProductView = () => {
                   <input type="text" value={quantity} readOnly />
                   <button onClick={handleIncrement}>+</button>
                   <div className="button-add-12">
-                    <button>Add to Cart</button>
+                    <button
+                      onClick={() =>
+                        addToCart(
+                          product.data._id,
+                          product.data.price,
+                          product.data.product_name,
+                          product.data.product_image
+                        )
+                      }
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
                 <h2>Total Price: ${product.data.price * quantity}</h2>
@@ -117,7 +152,7 @@ const ProductView = () => {
                   ) : (
                     <div>
                       {product.data.brand && (
-                        <p className="brand1">Brand: {product.data.brand}</p>
+                        <p className="brand">Brand: {product.data.brand}</p>
                       )}
                       {product.data.modelNumber && (
                         <p className="modelNumber">

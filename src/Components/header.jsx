@@ -7,11 +7,31 @@ import mainimage from "../Images/mmmm-transformed.jpeg";
 import "../styles/header.css";
 import { Helmet } from "react-helmet";
 
+const Accordion = ({ handleClick }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    sessionStorage.removeItem("authToken");
+    navigate("/");
+  };
+  const handleloginmini = (e) => {
+    e.preventDefault();
+    navigate("/login");
+  };
+  return (
+    <div className="accordion">
+      <div className="accordion-section" onClick={() => handleClick("login")}>
+        <p onClick={handleloginmini}>Login/Register</p>
+      </div>
+      <div className="accordion-section" onClick={() => handleClick("logout")}>
+        <p onClick={handleLogout}>Logout</p>
+      </div>
+    </div>
+  );
+};
+
 const Header = () => {
   const [categories, setCategories] = useState([]);
-  const [image, setImage] = useState([]);
-  const [name, setName] = useState([]);
-
+  const [accordionOpen, setAccordionOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,7 +60,7 @@ const Header = () => {
 
   const handleProfile = (e) => {
     e.preventDefault();
-    navigate("/Profile");
+    setAccordionOpen(!accordionOpen);
   };
 
   const handleAllProducts = (e) => {
@@ -48,13 +68,21 @@ const Header = () => {
     navigate("/AllProducts");
   };
 
+  const handleAccordionClick = (section) => {
+    if (section === "login") {
+      // Handle login/register action
+      console.log("Login/Register clicked");
+    } else if (section === "logout") {
+      // Handle logout action
+      console.log("Logout clicked");
+    }
+    setAccordionOpen(false);
+  };
+
   const getAllCategories = async () => {
     try {
       const response = await axios.get("http://localhost:8000/categories/");
-      console.log(response);
       setCategories(response.data);
-      setImage(response.data);
-      setName(response.data);
     } catch (error) {
       console.log("error fetching categories", error);
     }
@@ -115,6 +143,9 @@ const Header = () => {
             </a>
             <a href="" className="a" onClick={handleProfile}>
               <img className="image-profile" src={profileimage} alt="" />
+              {accordionOpen && (
+                <Accordion handleClick={handleAccordionClick} />
+              )}
             </a>
           </div>
         </ul>

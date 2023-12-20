@@ -94,3 +94,13 @@
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+.logout-image img{
+  margin-top: -320px;
+background-color: none; 
+border: 5px solid white; 
+max-width: 80px;
+}
+.logout-image:hover{
+background-color: #207de9;
+
+}

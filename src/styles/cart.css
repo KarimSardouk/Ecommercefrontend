@@ -1,43 +1,77 @@
-.mainboxcart {
+.mainboxcart{
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 80rem;
+  width:80rem;
 }
 
-.cartable {
+.cartable{
   border: 2px solid;
-  border-color: rgb(32, 125, 233);
+  border-color: rgb(32,125,233);
   background-color: white;
-  width: 600px;
+  width: 700px;
   border-collapse: collapse;
+  text-align: center;
+  
 }
-.cartable th,
-.cartable td {
+.cartable th, .cartable td {
   border-bottom: 2px solid rgb(32, 125, 233);
-  padding: 8px;
+  padding: 8px; 
 }
 
-.emptydiv {
+.emptydiv{
   display: flex;
-  flex-direction: space-between;
+  flex-direction:space-between;
   justify-content: center;
 }
-.totalp {
+.totalp{
   flex: 1;
-  color: rgb(32, 125, 233);
+  color: rgb(32,125,233);
+
 }
 .blues {
-  color: rgb(32, 125, 233);
+  color: rgb(32,125,233);
 }
-.checkout {
-  flex: 1;
+.checkout{
+  flex:1;
   border-radius: 80px 80px;
-  color: rgb(32, 125, 233);
-  border-color: rgb(32, 125, 233);
+  color:rgb(32,125,233) ;
+  border-color: rgb(32,125,233);
   background-color: white;
   height: 30px;
   width: 130px;
   font-size: 16px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.imgCart{
+  width:70px;
+  height: 70px;
+}
+
+.nameCart{
+  margin: auto;
+}
+
+.CartDiv{
+display: flex;
 }

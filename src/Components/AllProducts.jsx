@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "../styles/allproducts.css";
 import cartimage from "../Images/cartimage.png";
@@ -8,12 +9,16 @@ import dellimage from "../Images/dell-inspiron.png";
 import cart123 from "../Images/cart123.png";
 import Header from "./header";
 
-const AllProducts = () => {
+const AllProducts = (props) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
   const [counter, setCounter] = useState(0); // Add the counter state
   const [error, setError] = useState(null);
+
+  const { productId } = useParams();
+  const location = useLocation();
+  const userId = location.state?.userId;
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) =>
@@ -41,6 +46,24 @@ const AllProducts = () => {
 
     fetchProducts();
   }, []);
+  const addToCart = async (product) => {
+    try {
+      // Assuming you want to add 1 item each time
+      const response = await axios.post("http://localhost:8000/carts/add", {
+        user_id: userId,
+        products_id: product._id,
+        product_image: product.product_image,
+        quantity_to_purchase: 1,
+        price: product.price,
+        product_name: product.product_name,
+      });
+      console.log("Product added to cart:", response.data);
+      window.alert("Product added successfully");
+    } catch (error) {
+      console.log("Error adding product to cart:", error);
+      window.alert("Product not added successfully");
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -109,7 +132,7 @@ const AllProducts = () => {
                 <Link to={`/products/${product._id}`} className="box-1-product">
                   View Product
                 </Link>
-                <div className="box-1-cart">
+                <div className="box-1-cart" onClick={addToCart}>
                   <img src={cart123} alt="" />
                 </div>
               </div>

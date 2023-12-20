@@ -36,11 +36,11 @@ function Login() {
           password,
         }
       );
-
-      const userId = response.data.data._id; // Move this line inside the try block
+      const userId = response.data.data._id; // Assuming the response contains userId
       Cookies.set("userEmail", email, { expires: 7 });
       Cookies.set("userId", userId, { expires: 50 });
-
+      console.log(response.data.data._id);
+      console.log(userId);
       console.log(response.data.data, "session");
       sessionStorage.setItem("authToken", response.data.data);
       navigate("/");
