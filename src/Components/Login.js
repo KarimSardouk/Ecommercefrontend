@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 function Login() {
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -19,6 +20,9 @@ function Login() {
 
     return true;
   };
+  const userId = response.data.data._id; // Assuming the response contains userId
+      Cookies.set("userEmail", email, { expires: 7 });
+      Cookies.set("userId", userId, { expires: 50 });         
   useEffect(() => {
     if (sessionStorage.getItem("authToken")) {
       navigate("/");
