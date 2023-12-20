@@ -13,7 +13,7 @@ const Cart = () => {
   const clearUserCart = async () => {
     try {
       const response = await axios.delete(
-       `http://localhost:8000/carts/deleteByUserId/${userId}`
+       `https://computop.onrender.com/carts/deleteByUserId/${userId}`
       );
 
       if (response.data.success) {
@@ -32,7 +32,7 @@ const Cart = () => {
     clearUserCart();
   };
   const handleDeleteProduct = (_id) => {
-    fetch(`http://localhost:8000/carts/delete/${_id}`, {
+    fetch(`https://computop.onrender.com/carts/delete/${_id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -55,7 +55,7 @@ const Cart = () => {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/carts/get/${userId}"
+        "https://computop.onrender.com/carts/get/${userId}"
       );
       const fetchedCartItems = response.data;
 
@@ -104,7 +104,7 @@ const Cart = () => {
       for (let i = 0; i < formattedCartItems.length; i++) {
         const item = formattedCartItems[i];
         const response = await axios.post(
-          "http://localhost:8000/checkout/addCheckout",
+          "https://computop.onrender.com/checkout/addCheckout",
           {
             user_id: item.user_id,
             products_id: item.products_id,

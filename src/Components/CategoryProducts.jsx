@@ -12,7 +12,7 @@ const CategoryOnPress = ({ categoryName }) => {
     const fetchProductsByCategory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/product/product/categoryName/${categoryName}`
+          `https://computop.onrender.com/product/product/categoryName/${categoryName}`
         );
         setProducts(response.data);
         console.log("categoryName:", fetchProductsByCategory);

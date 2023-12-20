@@ -18,7 +18,7 @@ const AllSellers = () => {
     try {
       //fill the http url with your own
       const response = await axios.get(
-        "http://localhost:8000/users/getSellers"
+        "https://computop.onrender.com/users/getSellers"
       );
       console.log(response);
       setSellers(response.data);
@@ -67,7 +67,7 @@ const AllSellers = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/addSeller",
+        "https://computop.onrender.com/users/addSeller",
         {
           name,
           lastName,

@@ -23,7 +23,7 @@ const AdminDash = () => {
   const getAllUsers = async () => {
     try {
       //fill the http url with your own
-      const response = await axios.get("http://localhost:8000/user/");
+      const response = await axios.get("https://computop.onrender.com/user/");
       console.log(response);
       setUsers(response.data);
       setName(response.data);
@@ -36,7 +36,7 @@ const AdminDash = () => {
     }
   };
   const handleDeleteUser = (user_id) => {
-    fetch(`http://localhost:8000/user/deleteUser/${user_id}`, {
+    fetch(`https://computop.onrender.com/user/deleteUser/${user_id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())

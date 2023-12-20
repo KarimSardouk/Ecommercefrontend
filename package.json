@@ -9,10 +9,7 @@
     "@testing-library/user-event": "^13.2.1",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
-<<<<<<< HEAD
     "dotenv-webpack": "^8.0.1",
-=======
->>>>>>> 4d57b813734948a37d91e864b5348324236b3d61
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",

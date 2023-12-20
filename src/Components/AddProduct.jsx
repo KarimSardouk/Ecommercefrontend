@@ -62,7 +62,7 @@ const AddProduct = () => {
       });
       // Your axios request to post the product data to the backend
       const response = await axios.post(
-        "http://localhost:8000/product/products",
+        "https://computop.onrender.com/product/products",
         formData,
         {
           headers: {

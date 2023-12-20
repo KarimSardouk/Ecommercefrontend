@@ -30,7 +30,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/user/loginUser",
+        "https://computop.onrender.com/user/loginUser",
         {
           email,
           password,
@@ -54,7 +54,7 @@ function Login() {
     if (!validateInput()) return;
 
     try {
-      const response = await axios.post("http://localhost:8000/user/addUser", {
+      const response = await axios.post("https://computop.onrender.com/user/addUser", {
         name,
         lastName,
         email,

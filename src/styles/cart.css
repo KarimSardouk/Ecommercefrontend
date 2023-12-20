@@ -13,10 +13,7 @@
   width: 700px;
   border-collapse: collapse;
   text-align: center;
-<<<<<<< HEAD
   
-=======
->>>>>>> 4d57b813734948a37d91e864b5348324236b3d61
 }
 .cartable th, .cartable td {
   border-bottom: 2px solid rgb(32, 125, 233);
@@ -66,7 +63,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< HEAD
 .imgCart{
   width:70px;
   height: 70px;
@@ -79,17 +75,3 @@
 .CartDiv{
 display: flex;
 }
-=======
-.imgCart {
-  width: 70px;
-  height: 70px;
-}
-
-.nameCart {
-  margin: auto;
-}
-
-.CartDiv {
-  display: flex;
-}
->>>>>>> 4d57b813734948a37d91e864b5348324236b3d61

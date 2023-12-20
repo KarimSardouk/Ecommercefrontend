@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useParams, useLocation } from "react-router-dom";
-import { useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "../styles/allproducts.css";
 import cartimage from "../Images/cartimage.png";
@@ -33,7 +32,7 @@ const AllProducts = (props) => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/product/getAll/"
+          "https://computop.onrender.com/product/getAll/"
         );
         setProducts(response.data);
         setCounter(response.data.length); // Update the counter state
@@ -50,7 +49,7 @@ const AllProducts = (props) => {
   const addToCart = async (product) => {
     try {
       // Assuming you want to add 1 item each time
-      const response = await axios.post("http://localhost:8000/carts/add", {
+      const response = await axios.post("https://computop.onrender.com/carts/add", {
         user_id: userId,
         products_id: product._id,
         product_image: product.product_image,

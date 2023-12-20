@@ -81,7 +81,7 @@ const Header = () => {
 
   const getAllCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/categories/");
+      const response = await axios.get("https://computop.onrender.com/categories/");
       setCategories(response.data);
     } catch (error) {
       console.log("error fetching categories", error);

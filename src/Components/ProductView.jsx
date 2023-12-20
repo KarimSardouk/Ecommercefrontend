@@ -21,24 +21,6 @@ const ProductView = (props) => {
     setCount(count + 1);
     return count + 1;
   };
-  const addToCart = async (productId, price, product_name, product_image) => {
-    try {
-      const updatedCount = handleIncrements(count);
-      const response = await axios.post("http://localhost:8000/carts/add", {
-        user_id: userId,
-        products_id: productId,
-        product_image: product_image,
-        quantity_to_purchase: updatedCount,
-        price: price,
-        product_name: product_name,
-      });
-      console.log("Product added to cart:", response.data);
-      window.alert("Product add successfully");
-    } catch (error) {
-      console.error("Error adding product to cart:", error);
-      window.alert("Product don't add successfully");
-    }
-  };
   const handleDetailedDescription = () => {
     setShowFullDescription(false);
   };
@@ -47,7 +29,7 @@ const ProductView = (props) => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/product/products/${productId}`
+          `https://computop.onrender.com/product/products/${productId}`
         );
         const fetchedProduct = response.data;
         setProduct(fetchedProduct);
@@ -81,7 +63,7 @@ const ProductView = (props) => {
     try {
       const updatedCount = handleIncrement();
 
-      const response = await axios.post("http://localhost:8000/carts/add", {
+      const response = await axios.post("https://computop.onrender.com/carts/add", {
         user_id: userId,
         products_id: productId,
         product_image: product.data.product_image,

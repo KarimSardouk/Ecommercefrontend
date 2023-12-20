@@ -16,7 +16,7 @@ const CategoriesHome = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/categories/");
+        const response = await axios.get("https://computop.onrender.com/categories/");
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching Categories:", error);

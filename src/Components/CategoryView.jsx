@@ -19,7 +19,7 @@ const CategoryView = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/product/getAll/"
+          "https://computop.onrender.com/product/getAll/"
         );
         setProducts(response.data);
       } catch (error) {

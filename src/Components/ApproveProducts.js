@@ -32,7 +32,7 @@ const ApproveProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/product/getAll/");
+      const response = await axios.get("https://computop.onrender.com/product/getAll/");
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching Products:", error);
@@ -45,7 +45,7 @@ const ApproveProducts = () => {
   const handleDeleteProduct = async (productId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8000/product/products/delete/${productId}`
+        `https://computop.onrender.com/product/products/delete/${productId}`
       );
       if (response.data.success) {
         console.log(`Product with ID ${productId} deleted successfully`);
@@ -95,7 +95,7 @@ const ApproveProducts = () => {
   const handleModalSave = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8000/product/products/update/${productId}`,
+        `https://computop.onrender.com/product/products/update/${productId}`,
         updatedProduct
       );
       if (response.data.success) {
