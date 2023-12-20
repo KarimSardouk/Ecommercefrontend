@@ -12,11 +12,10 @@ const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState("");
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0); // Add the counter state
   const [error, setError] = useState(null);
 
   const filteredProducts = useMemo(() => {
-    console.log("Filtering using Memo...");
     return products.filter((product) =>
       product.product_name.toLowerCase().includes(filter.toLowerCase())
     );
@@ -31,6 +30,7 @@ const AllProducts = () => {
           "http://localhost:8000/product/getAll/"
         );
         setProducts(response.data);
+        setCounter(response.data.length); // Update the counter state
       } catch (error) {
         console.error("Error fetching Products:", error);
         setError("Error fetching products. Please try again later.");
@@ -50,6 +50,7 @@ const AllProducts = () => {
     <div>
       <h1>All Products</h1>
       <div className="biggest-box">
+        <p>Total Products: {counter}</p>
         <input
           id="myInput1"
           placeholder="Filter names"

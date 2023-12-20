@@ -6,45 +6,48 @@ import profileimage from "../Images/profileimage.png";
 import mainimage from "../Images/mmmm-transformed.jpeg";
 import "../styles/header.css";
 import { Helmet } from "react-helmet";
+
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [image, setImage] = useState([]);
   const [name, setName] = useState([]);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     getAllCategories();
   }, []);
+
   const handleNavigate = (e) => {
     e.preventDefault();
-    const aboutSection = document.getElementById("About"); // Use the correct ID
-
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("#About");
-    }
+    scrollToSection("about");
   };
+
   const handleContact = (e) => {
     e.preventDefault();
-    navigate("/Contact1");
+    navigate("/ContactUsPage");
   };
+
   const handleCart = (e) => {
     e.preventDefault();
     navigate("/Cart");
   };
+
   const handleMainImage = (e) => {
     e.preventDefault();
     navigate("/");
   };
+
   const handleProfile = (e) => {
     e.preventDefault();
     navigate("/Profile");
   };
+
   const handleAllProducts = (e) => {
     e.preventDefault();
     navigate("/AllProducts");
   };
+
   const getAllCategories = async () => {
     try {
       const response = await axios.get("http://localhost:8000/categories/");
@@ -56,14 +59,14 @@ const Header = () => {
       console.log("error fetching categories", error);
     }
   };
-  const handleDashboard = (e) => {
-    e.preventDefault();
-    navigate("/Dashboard");
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
-  const handleAdminDash = (e) => {
-    e.preventDefault();
-    navigate("/AdminDash");
-  };
+
   return (
     <div>
       <Helmet>
@@ -89,7 +92,7 @@ const Header = () => {
           <a href="/" className="a" id="homea">
             <li>Home</li>
           </a>
-          <a href="#" className="a" onClick={handleNavigate}>
+          <a href="#" className="a" onClick={(e) => handleNavigate(e)}>
             <li>About</li>
           </a>
           <a
@@ -103,7 +106,7 @@ const Header = () => {
           <a href="/category" className="a" id="categorya">
             <li>Category</li>
           </a>
-          <a href="/AllProducts" className="a">
+          <a href="/AllProducts" className="a" onClick={handleAllProducts}>
             <li>AllProducts</li>
           </a>
           <div className="images12">
@@ -111,7 +114,6 @@ const Header = () => {
               <img src={cartimage} alt="" />
             </a>
             <a href="" className="a" onClick={handleProfile}>
-              {" "}
               <img className="image-profile" src={profileimage} alt="" />
             </a>
           </div>

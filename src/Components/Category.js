@@ -32,11 +32,11 @@ const Category = () => {
         <h1 className="Categorie">Categories</h1>
         <div className="box-container">
           {categories.map((category, index) => (
-            <div className="box-2" key={index}>
+            <div className="box-3" key={index}>
               <img
                 src={category.category_image}
                 alt={"image"}
-                className="box-2-image"
+                className="box-3-image"
                 onClick={() => handleCategoryClick(category.categoryName)}
               />
               <h2

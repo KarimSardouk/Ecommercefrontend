@@ -55,7 +55,7 @@ function App() {
           />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Contact1" element={<Contact1 />} />
+          <Route path="/ContactUsPage" element={<Contact1 />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/ApproveProducts" element={<ApproveProducts />} />
           <Route path="/Statistics" element={<Statistics />} />
